@@ -1,0 +1,6 @@
+# editors
+.vscode
+.idea
+
+# secrets
+.env
