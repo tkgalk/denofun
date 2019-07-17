@@ -1,6 +1,11 @@
 import curry from "./curry.ts";
 
-function identity(x) {
+/**
+ * **identity** returns the provided element, otherwise does nothing
+ * @param x supplied element
+ * @returns x supplied element
+ */
+function identity<T>(x: T): T {
     return x;
 }
 

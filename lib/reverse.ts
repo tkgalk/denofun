@@ -1,6 +1,11 @@
 import curry from "./curry.ts";
 
-function reverse(x: any[] | string): any[] | string {
+/**
+ * **reverse** reverses the order of the elements in array or string
+ * @param x array or string to be reversed
+ * @returns a reversed array or string
+ */
+function reverse<T>(x: T[] | string): T[] | string {
     if (Array.isArray(x)) {
         return x.reverse();
     }
