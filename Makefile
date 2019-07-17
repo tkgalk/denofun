@@ -1,2 +1,2 @@
 test:
-	deno --importmap=src/import_map.json src/test.ts
+	deno --importmap=import_map.json test.ts
