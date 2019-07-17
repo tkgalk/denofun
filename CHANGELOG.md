@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CONTRIBUTORS.md
 - new logo (courtesy of [Weronika Wróbel](https://www.behance.net/weronikawrobel)) 🎉!
 - Dockerfile
+- added JSDoc for functions
+- added warnings about pre-production usage and simple roadmap about versioning and release schedule
+
+### Changed
+- added more types
 
 ## Removed
 - removed doubled `test.ts` file
