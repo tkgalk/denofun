@@ -15,5 +15,6 @@ import "./lib/values.test.ts";
 import "./lib/keys.test.ts";
 import "./lib/split.test.ts";
 import "./lib/sort.test.ts";
+import "./lib/concat.test.ts";
 
 runTests();

@@ -49,6 +49,15 @@ const greetLoudly = compose(makeLoud, greet);
 greetLoudly("world"); // => HELLO, WORLD!
 ```
 
+### concat
+**concat** adds two arrays or strings together
+```typescript
+import concat from "denofun/lib/concat.ts";
+
+concat("hello", "world"); // => "helloworld"
+concat([1, 2, 3], [3, 4, 5]); // => [1, 2, 3, 3, 4, 5]
+```
+
 ### curry
 **curry** returns a curried version of the provided n-arity function, it will return new 1-arity functions until all arguments are supplied.
 ```typescript
