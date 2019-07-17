@@ -50,7 +50,7 @@ greetLoudly("world"); // => HELLO, WORLD!
 ```
 
 ### concat
-**concat** adds two arrays or strings together
+**concat** adds two arrays or strings together.
 ```typescript
 import concat from "denofun/lib/concat.ts";
 
@@ -84,6 +84,18 @@ const cars = [
 const filterCarsByMake = curry((make: string, car) => car.make === make);
 const filterAlfas = filterCarsByMake("Alfa Romeo");
 cars.filter(filterAlfas); // => [ { make: "Alfa Romeo", model: "Giulia" }, { make: "Alfa Romeo", model: "Stelvio" } ]
+```
+
+### equals
+**equals** checks if two values are equal, **warning:** for non-primitives uses JSON parsing (for now).
+```typescript
+import equals from "denofun/lib/equals.ts";
+
+equals(1, 1); // => true
+equals(1, 2); // => false
+equals([1, 2, 3], [1, 2, 3]); // => true
+equals([1, 2, 3], [2, 1, 3]); // => false
+equals({ make: "Alfa Romeo", model: "Giulia" }, { make: "Alfa Romeo", model: "Giulia" }); // => true
 ```
 
 ### filter
