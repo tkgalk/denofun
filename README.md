@@ -1,7 +1,12 @@
 # denofun
-Small utility library for [Deno](https://deno.land) containing functions, monads and other fun stuff.
-
-<image src="https://media.giphy.com/media/XOXdQszYm4I3m/giphy.gif" width="480" height="360">
+    
+<p align="center">
+    <img src="logo.svg" width="256" height="256"></img>
+    <p align="center">
+        Small utility library for <a href="https://deno.land">Deno</a> containing functions, monads and other fun stuff.
+    </p>
+</p>
+</br></br>
 
 ## Documentation
 Code samples assume [import map](https://deno.land/manual.html#importmaps) is configured like this (URL is still WIP, `denofun` like Deno is still under heavy development).
@@ -9,7 +14,7 @@ Code samples assume [import map](https://deno.land/manual.html#importmaps) is co
 ```
 {
   "imports": {
-    "std/": "https://deno.land/std/",
+    "std/": "std/",
     "denofun/": "https://raw.githubusercontent.com/galkowskit/denofun/master/"
   }
 }

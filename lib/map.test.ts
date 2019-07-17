@@ -1,5 +1,5 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { test } from "std/testing/mod.ts";
+import { assertEquals } from "std/testing/asserts.ts";
 
 import map from './map.ts';
 
