@@ -17,5 +17,6 @@ import "./lib/split.test.ts";
 import "./lib/sort.test.ts";
 import "./lib/concat.test.ts";
 import "./lib/equals.test.ts";
+import "./lib/find.test.ts";
 
 runTests();

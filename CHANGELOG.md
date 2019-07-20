@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added warnings about pre-production usage and simple roadmap about versioning and release schedule
 - concat function
 - equals function
+- find function
 
 ### Changed
 - added more types
