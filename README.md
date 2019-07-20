@@ -116,6 +116,28 @@ const cars = [
 filter(car => car.make === "Ford", cars); // => [ { make: "Ford", model: "Mustang " }, { make: "Ford", model: "Focus " } ]
 ```
 
+### find
+**find** looks up first element of an array that matches the function passed.
+```typescript
+import find from "denofun/lib/find.ts";
+
+const cars = [
+    { make: "Alfa Romeo", model: "Giulia" },
+    { make: "Alfa Romeo", model: "Stelvio" },
+    { make: "Ford", model: "Mustang "},
+    { make: "Ford", model: "Focus "},
+    { make: "Toyota", model: "Mirai" },
+    { make: "Toyota", model: "Yaris" },
+    { make: "Toyota", model: "Supra" },
+];
+
+function findToyota(car) {
+    return car.make === 'Toyota';
+}
+
+find(findToyota, cars); // => { make: "Toyota", model: "Mirai" }
+```
+
 ### head
 **head** returns the first element of an array or a string.
 ```typescript
