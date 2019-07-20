@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import find from './find.ts';
+import find from '../lib/find.ts';
 
 function findToyota(car) {
     return car.make === 'Toyota';

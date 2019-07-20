@@ -20,9 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - concat function
 - equals function
 - find function
+- flatten function
 
 ### Changed
 - added more types
+- added missing docs to find
 
 ## Removed
 - removed doubled `test.ts` file
