@@ -17,5 +17,7 @@ import "./split.test.ts";
 import "./sort.test.ts";
 import "./concat.test.ts";
 import "./equals.test.ts";
+import "./find.test.ts";
+import "./flatten.test.ts";
 
 runTests();
