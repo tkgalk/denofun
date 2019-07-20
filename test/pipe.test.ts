@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import pipe from './pipe.ts';
+import pipe from '../lib/pipe.ts';
 
 function add5(n) {
     return n + 5;

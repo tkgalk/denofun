@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import tail from './tail.ts';
+import tail from '../lib/tail.ts';
 
 test({
     name: "tail",

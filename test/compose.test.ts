@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import compose from './compose.ts';
+import compose from '../lib/compose.ts';
 
 function add5(n) {
     return n + 5;

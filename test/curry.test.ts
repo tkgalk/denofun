@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import curry from './curry.ts';
+import curry from '../lib/curry.ts';
 
 function add(a, b) {
     return a + b;

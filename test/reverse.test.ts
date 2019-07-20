@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import reverse from './reverse.ts';
+import reverse from '../lib/reverse.ts';
 
 
 test({

@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import split from './split.ts';
+import split from '../lib/split.ts';
 
 test({
     name: "split",

@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import equals from './equals.ts';
+import equals from '../lib/equals.ts';
 
 test({
     name: "equals",
