@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import reduce from './reduce.ts';
+import reduce from '../lib/reduce.ts';
 
 function add(a, b) {
     return a + b;

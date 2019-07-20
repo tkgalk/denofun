@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import filter from './filter.ts';
+import filter from '../lib/filter.ts';
 
 function isLessThan5(n) {
     return n < 5;

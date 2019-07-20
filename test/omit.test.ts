@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import omit from './omit.ts';
+import omit from '../lib/omit.ts';
 
 const a = {
     a: 1,

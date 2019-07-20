@@ -283,3 +283,12 @@ import values from "denofun/lib/values.ts";
 const car = { make: "Alfa Romeo", model: "Giulia" };
 values(car); // => ["make", "model"]
 ```
+
+## For Developers
+If you want to contribute to Denofun:
+
+1. Clone this repository.
+2. Make sure you have Deno installed.
+3. You can run tests via `./bin/test.ts`.
+
+Thanks!

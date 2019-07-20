@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import identity from './identity.ts';
+import identity from '../lib/identity.ts';
 
 test({
     name: "identity",

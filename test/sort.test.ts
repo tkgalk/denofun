@@ -1,7 +1,7 @@
 import { test } from "std/testing/mod.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
-import sort from './sort.ts';
+import sort from '../lib/sort.ts';
 
 function sortNumbers (a, b) {
     if (a > b) {
