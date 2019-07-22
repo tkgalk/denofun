@@ -2,4 +2,4 @@
 
 set -e
 
-deno --importmap=import_map.json test/_test.ts
+deno test/_test.ts

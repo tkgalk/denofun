@@ -20,21 +20,26 @@ Denofun v1.0.0 will NOT be released until Deno v1.0.0 is released. In the meanti
 - good, out-of-the-box typings
 
 ## Documentation
-Code samples assume [import map](https://deno.land/manual.html#importmaps) is configured like this.
-
+Thanks to how Deno works, it's easy to start using this library.
+```typescript
+import compose from "https://raw.githubusercontent.com/galkowskit/denofun/master/lib/compose.ts";
 ```
-{
-  "imports": {
-    "std/": "std/",
-    "denofun/": "https://raw.githubusercontent.com/galkowskit/denofun/master/"
-  }
-}
+Denofun is also present in [deno.land](https://deno.land/) so you can use it for easier links.
+```typescript
+import compose from "https://deno.land/x/denofun/lib/compose.ts";
 ```
-
+You can even target specific versions or branches.
+```typescript
+import compose from "https://deno.land/x/denofun@v0.1.0/lib/compose.ts";
+```
+Or if you find yourself needing the transpiled JavaScript version:
+```typescript
+import compose from "https://deno.land/x/denofun/lib/compose.ts?js";
+```
 ### compose
 **compose** takes a list of functions and does right-to-left function composition.
 ```typescript
-import compose from "denofun/lib/compose.ts";
+import compose from "https://deno.land/x/denofun/lib/compose.ts";
 
 function greet(name: string) {
     return `hello, ${name}!`;
@@ -52,7 +57,7 @@ greetLoudly("world"); // => HELLO, WORLD!
 ### concat
 **concat** adds two arrays or strings together.
 ```typescript
-import concat from "denofun/lib/concat.ts";
+import concat from "https://deno.land/x/denofun/lib/concat.ts";
 
 concat("hello", "world"); // => "helloworld"
 concat([1, 2, 3], [3, 4, 5]); // => [1, 2, 3, 3, 4, 5]
@@ -61,7 +66,7 @@ concat([1, 2, 3], [3, 4, 5]); // => [1, 2, 3, 3, 4, 5]
 ### curry
 **curry** returns a curried version of the provided n-arity function, it will return new 1-arity functions until all arguments are supplied.
 ```typescript
-import curry from "denofun/lib/curry.ts";
+import curry from "https://deno.land/x/denofun/lib/curry.ts";
 
 const greet = (name: string, age: number) => `hello, I'm Tomasz and I'm 26 years old`;
 greet("Tomasz", 26); // => hello, I'm Tomasz and I'm 26 years old
@@ -89,7 +94,7 @@ cars.filter(filterAlfas); // => [ { make: "Alfa Romeo", model: "Giulia" }, { mak
 ### equals
 **equals** checks if two values are equal, **warning:** for non-primitives uses JSON parsing (for now).
 ```typescript
-import equals from "denofun/lib/equals.ts";
+import equals from "https://deno.land/x/denofun/lib/equals.ts";
 
 equals(1, 1); // => true
 equals(1, 2); // => false
@@ -101,7 +106,7 @@ equals({ make: "Alfa Romeo", model: "Giulia" }, { make: "Alfa Romeo", model: "Gi
 ### filter
 **filter** runs filter function on every element of array and returns a new array with only those elements for which filter function returned true.
 ```typescript
-import filter from "denofun/lib/filter.ts";
+import filter from "https://deno.land/x/denofun/lib/filter.ts";
 
 const cars = [
     { make: "Alfa Romeo", model: "Giulia" },
@@ -119,7 +124,7 @@ filter(car => car.make === "Ford", cars); // => [ { make: "Ford", model: "Mustan
 ### find
 **find** looks up first element of an array that matches the function passed.
 ```typescript
-import find from "denofun/lib/find.ts";
+import find from "https://deno.land/x/denofun/lib/find.ts";
 
 const cars = [
     { make: "Alfa Romeo", model: "Giulia" },
@@ -141,7 +146,7 @@ find(findToyota, cars); // => { make: "Toyota", model: "Mirai" }
 ### flatten
 **flatten** takes an array of elements and flattens it until all elements are on the root-level (`flat(Infinity)`).
 ```typescript
-import flatten from "denofun/lib/find.ts";
+import flatten from "https://deno.land/x/denofun/lib/find.ts";
 
 flatten([[1, 2, 3], [4, 5, 6]]); // => [1, 2, 3, 4, 5, 6]
 flatten([[1, [2, 3], [4, [5, [6]]]]]); // => [1, 2, 3, 4, 5, 6]
@@ -151,7 +156,7 @@ flatten([]); // => []
 ### head
 **head** returns the first element of an array or a string.
 ```typescript
-import head from "denofun/lib/head.ts";
+import head from "https://deno.land/x/denofun/lib/head.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 head(numbers); // => 1
@@ -164,7 +169,7 @@ head("hello world!"); // => "h"
 ### identity
 **identity** returns the provided element, otherwise does nothing.
 ```typescript
-import identity from "denofun/lib/identity.ts";
+import identity from "https://deno.land/x/denofun/lib/identity.ts";
 
 const x = 5;
 identity(x); // => 5
@@ -173,7 +178,7 @@ identity(x); // => 5
 ### keys
 **keys** returns key names from a provided object.
 ```typescript
-import keys from "denofun/lib/keys.ts";
+import keys from "https://deno.land/x/denofun/lib/keys.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 keys(car); // => ['make', 'model']
@@ -182,7 +187,7 @@ keys(car); // => ['make', 'model']
 ### map
 **map** applies a function to each element of the array, returns the array of results.
 ```typescript
-import map from "denofun/lib/map.ts";
+import map from "https://deno.land/x/denofun/lib/map.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 
@@ -192,7 +197,7 @@ map(n => n * 2, numbers); // => [2, 4, 6, 8, 10]
 ### omit
 **omit** returns a copy of an object but without specified keys.
 ```typescript
-import omit from "denofun/lib/omit.ts";
+import omit from "https://deno.land/x/denofun/lib/omit.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 omit(["make"], car); // => { model: 'Giulia' }
@@ -201,7 +206,7 @@ omit(["make"], car); // => { model: 'Giulia' }
 ### pipe
 **pipe** takes a list of functions and does left-to-right function composition.
 ```typescript
-import pipe from "denofun/lib/pipe.ts";
+import pipe from "https://deno.land/x/denofun/lib/pipe.ts";
 
 function greet(name: string) {
     return `hello, ${name}!`;
@@ -220,7 +225,7 @@ greetLoudly("world"); // => "HELLO, WORLD!"
 **reduce** applies a reductor function to all elements of the array while
 keeping the aggragete of previous iterations. Returns a single value.
 ```typescript
-import reduce from "denofun/lib/reduce.ts";
+import reduce from "https://deno.land/x/denofun/lib/reduce.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 
@@ -231,7 +236,7 @@ reduce(add, 0, numbers); // => 15
 ### reverse
 **reverse** reverses the order of the elements in array or string.
 ```typescript
-import reverse from "denofun/lib/reverse.ts";
+import reverse from "https://deno.land/x/denofun/lib/reverse.ts";
 
 reverse([1, 2, 3, 4, 5]); // => [5, 4, 3, 2, 1]
 
@@ -246,7 +251,7 @@ reverse("hello world!"); // => ["!dlrow olleh"]
 Sorting function has to accept two arguments and retrun 1 if first argument
 is bigger than second, 0 if equal and -1 if lesser.
 ```typescript
-import sort from "denofun/lib/sort.ts";
+import sort from "https://deno.land/x/denofun/lib/sort.ts";
 
 function sortNumbers (a, b) {
     if (a > b) {
@@ -268,7 +273,7 @@ sort(sortNumbers, [5, 4, 2, 3, 1]); // => [1, 2, 3, 4, 5]
 ### split
 **split** splits a string by a given deliminator/separator.
 ```typescript
-import split from "denofun/lib/split.ts";
+import split from "https://deno.land/x/denofun/lib/split.ts";
 
 split("/", "/usr/local/bin/deno"); // => ["", "usr", "local", "bin", "deno"]
 ```
@@ -276,7 +281,7 @@ split("/", "/usr/local/bin/deno"); // => ["", "usr", "local", "bin", "deno"]
 ### tail
 **tail** returns all elements of the given array or string except the first.
 ```typescript
-import tail from "denofun/lib/tail.ts";
+import tail from "https://deno.land/x/denofun/lib/tail.ts";
 
 tail([1, 2, 3, 4, 5]); // => [2, 3, 4, 5]
 
@@ -288,7 +293,7 @@ tail("hello world!"); // => "ello world!"
 ### values
 **values** returns values from a provided object
 ```typescript
-import values from "denofun/lib/values.ts";
+import values from "https://deno.land/x/denofun/lib/values.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 values(car); // => ["make", "model"]

@@ -1,4 +1,4 @@
-import { runTests } from "std/testing/mod.ts";
+import { runTests } from "https://deno.land/std/testing/mod.ts";
 
 import "./curry.test.ts";
 import "./head.test.ts";

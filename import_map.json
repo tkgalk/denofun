@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "std/": "https://deno.land/std/",
-    "denofun/": "https://raw.githubusercontent.com/galkowskit/denofun/master/"
-  }
-}
