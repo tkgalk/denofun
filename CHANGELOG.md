@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - equals function
 - find function
 - flatten function
+- has function
 
 ### Changed
 - added more types

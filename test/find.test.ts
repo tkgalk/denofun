@@ -10,8 +10,8 @@ function findToyota(car) {
 const cars = [
     { make: "Alfa Romeo", model: "Giulia" },
     { make: "Alfa Romeo", model: "Stelvio" },
-    { make: "Ford", model: "Mustang "},
-    { make: "Ford", model: "Focus "},
+    { make: "Ford", model: "Mustang" },
+    { make: "Ford", model: "Focus" },
     { make: "Toyota", model: "Mirai" },
     { make: "Toyota", model: "Yaris" },
     { make: "Toyota", model: "Supra" },
