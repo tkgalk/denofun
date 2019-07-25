@@ -19,5 +19,6 @@ import "./concat.test.ts";
 import "./equals.test.ts";
 import "./find.test.ts";
 import "./flatten.test.ts";
+import "./has.test.ts";
 
 runTests();

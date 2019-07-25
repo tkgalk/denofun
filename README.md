@@ -79,8 +79,8 @@ curriedGreet("Tomasz")(26) // => hello, I'm Tomasz and I'm 26 years old
 const cars = [
     { make: "Alfa Romeo", model: "Giulia" },
     { make: "Alfa Romeo", model: "Stelvio" },
-    { make: "Ford", model: "Mustang "},
-    { make: "Ford", model: "Focus "},
+    { make: "Ford", model: "Mustang"},
+    { make: "Ford", model: "Focus"},
     { make: "Toyota", model: "Mirai" },
     { make: "Toyota", model: "Yaris" },
     { make: "Toyota", model: "Supra" },
@@ -111,14 +111,14 @@ import filter from "https://deno.land/x/denofun/lib/filter.ts";
 const cars = [
     { make: "Alfa Romeo", model: "Giulia" },
     { make: "Alfa Romeo", model: "Stelvio" },
-    { make: "Ford", model: "Mustang "},
-    { make: "Ford", model: "Focus "},
+    { make: "Ford", model: "Mustang"},
+    { make: "Ford", model: "Focus"},
     { make: "Toyota", model: "Mirai" },
     { make: "Toyota", model: "Yaris" },
     { make: "Toyota", model: "Supra" },
 ];
 
-filter(car => car.make === "Ford", cars); // => [ { make: "Ford", model: "Mustang " }, { make: "Ford", model: "Focus " } ]
+filter(car => car.make === "Ford", cars); // => [ { make: "Ford", model: "Mustang" }, { make: "Ford", model: "Focus" } ]
 ```
 
 ### find
@@ -129,8 +129,8 @@ import find from "https://deno.land/x/denofun/lib/find.ts";
 const cars = [
     { make: "Alfa Romeo", model: "Giulia" },
     { make: "Alfa Romeo", model: "Stelvio" },
-    { make: "Ford", model: "Mustang "},
-    { make: "Ford", model: "Focus "},
+    { make: "Ford", model: "Mustang"},
+    { make: "Ford", model: "Focus"},
     { make: "Toyota", model: "Mirai" },
     { make: "Toyota", model: "Yaris" },
     { make: "Toyota", model: "Supra" },
@@ -151,6 +151,15 @@ import flatten from "https://deno.land/x/denofun/lib/find.ts";
 flatten([[1, 2, 3], [4, 5, 6]]); // => [1, 2, 3, 4, 5, 6]
 flatten([[1, [2, 3], [4, [5, [6]]]]]); // => [1, 2, 3, 4, 5, 6]
 flatten([]); // => []
+```
+
+### has
+**has** checks if a key exists inside an object (does NOT check the prototype's keys!).
+```typescript
+import has from "https://deno.land/x/denofun/lib/has.ts";
+
+const car = { make: "Alfa Romeo", model: "Giulia" };
+has('make', car); // => true
 ```
 
 ### head
