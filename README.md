@@ -238,6 +238,15 @@ const greetLoudly = pipe(greet, makeLoud);
 greetLoudly("world"); // => "HELLO, WORLD!"
 ```
 
+###prop
+**prop** returns a value from object under a specific key.
+```typescript
+import prop from "https://deno.land/x/denofun/lib/prop.ts";
+
+const car = { make: "Alfa Romeo", model: "Giulia" };
+prop("make", car); // => "Alfa Romeo"
+```
+
 ### reduce
 **reduce** applies a reductor function to all elements of the array while
 keeping the aggragete of previous iterations. Returns a single value.

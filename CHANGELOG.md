@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - flatten function
 - has function
 - nth function
+- has function
+- prop function
 
 ### Changed
 - added more types

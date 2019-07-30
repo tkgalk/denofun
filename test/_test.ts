@@ -21,5 +21,6 @@ import "./find.test.ts";
 import "./flatten.test.ts";
 import "./has.test.ts";
 import "./nth.test.ts";
+import "./prop.test.ts";
 
 runTests();
