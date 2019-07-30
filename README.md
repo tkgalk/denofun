@@ -199,8 +199,16 @@ keys(car); // => ['make', 'model']
 import map from "https://deno.land/x/denofun/lib/map.ts";
 
 const numbers = [1, 2, 3, 4, 5];
-
 map(n => n * 2, numbers); // => [2, 4, 6, 8, 10]
+```
+
+### nth
+**nth** returns element under given index, if negative index is provided element at (length + index) is returned.
+```typescript
+import nth from "https://deno.land/x/denofun/lib/map.ts";
+
+nth(2, [1, 2, 3, 4, 5]); // => 3
+nth(4, "hello world!"); // => "o"
 ```
 
 ### omit

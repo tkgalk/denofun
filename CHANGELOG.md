@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - find function
 - flatten function
 - has function
+- nth function
 
 ### Changed
 - added more types
