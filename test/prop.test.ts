@@ -9,7 +9,6 @@ test({
     name: "prop",
     fn(): void {
         assertEquals(prop("make", car), "Alfa Romeo");
-        assertEquals(prop("model")(car), "Giulia");
         assertEquals(prop("wheels", car), undefined);
     }
 })

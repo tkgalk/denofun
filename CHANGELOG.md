@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Removed
 - removed doubled `test.ts` file
 - removed importmaps completely (check [issue #20](https://github.com/galkowskit/denofun/issues/20))
+- removed curry-by-default behaviour
 
 ## [v0.1.0] - 2019-07-17
 ### Added

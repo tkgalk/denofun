@@ -1,5 +1,3 @@
-import curry from "./curry.ts";
-
 /**
  * **sort** performs a sorting of array or string via provided sorting function,
  * sorting function has to accept two arguments and retrun 1 if first argument
@@ -8,8 +6,6 @@ import curry from "./curry.ts";
  * @param xs array or string to be sorted
  * @returns a sorted array or string
  */
-function sort<T>(fn: (a: T, b: T) => -1 | 0 | 1, xs: T[]): T[] {
+export default function sort<T>(fn: (a: T, b: T) => -1 | 0 | 1, xs: T[]): T[] {
     return xs.sort(fn);
 }
-
-export default curry(sort);

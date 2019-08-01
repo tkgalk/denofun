@@ -11,7 +11,6 @@ test({
     name: "reduce",
     fn(): void {
         assertEquals(reduce(add, 0, [1, 2, 5]), 8);
-        assertEquals(reduce(add, 0)([1, 2, 5]), 8);
-        assertEquals(reduce(add)(0)([]), 0);
+        assertEquals(reduce(add, 0, []), 0);
     }
 })
