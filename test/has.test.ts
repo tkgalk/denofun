@@ -10,6 +10,5 @@ test({
     fn(): void {
         assertEquals(has('make', car), true);
         assertEquals(has('transmission', car), false);
-        assertEquals(has('make')(car), true);
     }
 })

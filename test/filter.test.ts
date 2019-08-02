@@ -11,6 +11,5 @@ test({
     name: "filter",
     fn(): void {
         assertEquals(filter(isLessThan5, [1, 2, 6, 8]), [1, 2]);
-        assertEquals(filter(isLessThan5)([1, 2, 6, 8]), [1, 2]);
     }
 })
