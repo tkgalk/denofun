@@ -153,6 +153,25 @@ flatten([[1, [2, 3], [4, [5, [6]]]]]); // => [1, 2, 3, 4, 5, 6]
 flatten([]); // => []
 ```
 
+### groupBy
+**groupBy** accepts a selector function and a list of elements, the elements will be grouped by the return value of the selector function.
+```typescript
+import find from "https://deno.land/x/denofun/lib/group_by.ts";
+
+const cars = [
+    { make: "Alfa Romeo", model: "Giulia" },
+    { make: "Alfa Romeo", model: "Stelvio" },
+    { make: "Ford", model: "Mustang"},
+    { make: "Ford", model: "Focus"},
+    { make: "Toyota", model: "Mirai" },
+    { make: "Toyota", model: "Yaris" },
+    { make: "Toyota", model: "Supra" },
+];
+
+groupBy(car => car.name, cars); // => { "Alfa Romeo": [ { make: "Alfa Romeo", model: "Giulia" }, { make: "Alfa Romeo", model: "Stelvio" } ], "Ford": [ { make: "Ford", model: "Mustang" }, { make: "Ford", model: "Focus" }, ], "Toyota": [ { make: "Toyota", model: "Mirai" }, { make: "Toyota", model: "Yaris" }, { make: "Toyota", model: "Supra" } ] }
+groupBy(x => x.length, ["a", "bb", "bb", "ccc"]); // => { 1: ["a"], 2: ["bb", "bb"], 3: ["ccc"] }
+```
+
 ### has
 **has** checks if a key exists inside an object (does NOT check the prototype's keys!).
 ```typescript

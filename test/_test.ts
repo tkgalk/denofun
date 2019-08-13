@@ -22,5 +22,6 @@ import "./flatten.test.ts";
 import "./has.test.ts";
 import "./nth.test.ts";
 import "./prop.test.ts";
+import "./group_by.test.ts";
 
 runTests();
