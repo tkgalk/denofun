@@ -23,5 +23,6 @@ import "./has.test.ts";
 import "./nth.test.ts";
 import "./prop.test.ts";
 import "./group_by.test.ts";
+import "./includes.test.ts";
 
 runTests();
