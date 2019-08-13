@@ -203,6 +203,16 @@ const x = 5;
 identity(x); // => 5
 ```
 
+### includes
+**includes** checks if an element exists in a string or array (including objects).
+```typescript
+import includes from "https://deno.land/x/denofun/lib/includes.ts";
+
+includes(1, [1, 2, 3]); // => true
+includes("hel", "hello world"); // => true
+includes({ make: "Alfa Romeo", model: "Giulia" }, [{ make: "Alfa Romeo", model: "Giulia" }, { make: "Ford", model: "Mustang" }]); // => true
+```
+
 ### keys
 **keys** returns key names from a provided object.
 ```typescript
