@@ -68,7 +68,7 @@ concat([1, 2, 3], [3, 4, 5]); // => [1, 2, 3, 3, 4, 5]
 ```typescript
 import curry from "https://deno.land/x/denofun/lib/curry.ts";
 
-const greet = (name: string, age: number) => `hello, I'm Tomasz and I'm 26 years old`;
+const greet = (name: string, age: number) => `hello, I'm ${name} and I'm ${age} years old`;
 greet("Tomasz", 26); // => hello, I'm Tomasz and I'm 26 years old
 
 const curriedGreet = curry(greet);

@@ -3,7 +3,7 @@ import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 
 import sort from '../lib/sort.ts';
 
-function sortNumbers (a, b) {
+function sortNumbers (a: number, b: number) {
     if (a > b) {
         return 1;
     }
@@ -34,8 +34,14 @@ function sortStringsByLength (a: string, b: string) {
 test({
     name: "sort",
     fn(): void {
-        assertEquals(sort(sortNumbers, [1, 6, 2, 3, 5]), [1, 2, 3, 5, 6]);
-        assertEquals(sort(sortStringsByLength, ["a", "bb", "ccccc", "ddd"]), ["a", "bb", "ddd", "ccccc"]);
+        const numbers = [1, 6, 2, 3, 5];
+        Object.freeze(numbers);
+
+        const strings = ["a", "bb", "ccccc", "ddd"];
+        Object.freeze(strings);
+
+        assertEquals(sort(sortNumbers, numbers), [1, 2, 3, 5, 6]);
+        assertEquals(sort(sortStringsByLength, strings), ["a", "bb", "ddd", "ccccc"]);
         assertEquals(sort(sortNumbers, []), []);
     }
 })
