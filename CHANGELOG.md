@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - added more types
 - added missing docs to find
+- fixed unintentional mutation in sort function
 
 ## Removed
 - removed doubled `test.ts` file
