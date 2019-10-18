@@ -276,6 +276,24 @@ const greetLoudly = pipe(greet, makeLoud);
 greetLoudly("world"); // => "HELLO, WORLD!"
 ```
 
+### pluck
+**pluck** takes an array of objects and a property name and returns an array containing the named property of each object.
+```typescript
+import pluck from "https://deno.land/x/denofun/lib/pluck.ts";
+
+const cars = [
+    { make: "Alfa Romeo", model: "Giulia" },
+    { make: "Alfa Romeo", model: "Stelvio" },
+    { make: "Ford", model: "Mustang" },
+    { make: "Ford", model: "Focus" },
+    { make: "Toyota", model: "Mirai" },
+    { make: "Toyota", model: "Yaris" },
+    { make: "Toyota", model: "Supra" }
+];
+
+pluck("make", cars); // => [ "Alfa Romeo", "Alfa Romeo", "Ford", "Ford", "Toyota", "Toyota", "Toyota" ]
+```
+
 ###prop
 **prop** returns a value from object under a specific key.
 ```typescript

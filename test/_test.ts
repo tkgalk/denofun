@@ -25,5 +25,6 @@ import "./prop.test.ts";
 import "./group_by.test.ts";
 import "./includes.test.ts";
 import "./last.test.ts";
+import "./pluck.test.ts";
 
 runTests();
