@@ -330,8 +330,8 @@ reverse("hello world!"); // => ["!dlrow olleh"]
 ### sort
 **sort** performs a sorting of array or string via provided sorting function.
 
-Sorting function has to accept two arguments and retrun 1 if first argument
-is bigger than second, 0 if equal and -1 if lesser.
+Sorting function has to accept two arguments and retrun positive number if first argument
+is bigger than second, 0 if equal and negative if lesser.
 ```typescript
 import sort from "https://deno.land/x/denofun/lib/sort.ts";
 
@@ -349,8 +349,12 @@ function sortNumbers (a, b) {
     }
 }
 
-sort(sortNumbers, [5, 4, 2, 3, 1]); // => [1, 2, 3, 4, 5]
+sort(sortNumbers, [5, 4, 2, 3, 1]); // => [1, 2, 3, 4, 5];
+
+// or shorter
+sort((a, b) => a - b, [5, 4, 2, 3, 1]); // => [1, 2, 3, 4, 5];
 ```
+
 
 ### split
 **split** splits a string by a given deliminator/separator.

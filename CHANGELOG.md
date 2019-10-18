@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added more types
 - added missing docs to find
 - fixed unintentional mutation in sort function
+- sort supports any numbers now, not only 1, 0 and -1
 
 ## Removed
 - removed doubled `test.ts` file
