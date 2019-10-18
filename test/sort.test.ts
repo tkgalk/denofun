@@ -43,5 +43,6 @@ test({
         assertEquals(sort(sortNumbers, numbers), [1, 2, 3, 5, 6]);
         assertEquals(sort(sortStringsByLength, strings), ["a", "bb", "ddd", "ccccc"]);
         assertEquals(sort(sortNumbers, []), []);
+        assertEquals(sort((a, b) => a - b, [1, 2, 5, 3, 2]), [1, 2, 2, 3, 5]);
     }
 })
