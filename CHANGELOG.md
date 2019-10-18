@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - prop function
 - groupBy function
 - includes function
+- last function
 
 ### Changed
 - added more types

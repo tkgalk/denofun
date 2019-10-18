@@ -219,7 +219,16 @@ includes({ make: "Alfa Romeo", model: "Giulia" }, [{ make: "Alfa Romeo", model: 
 import keys from "https://deno.land/x/denofun/lib/keys.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
-keys(car); // => ['make', 'model']
+keys(car); // => ["make", "model"]
+```
+
+### last
+**last** accepts a list of items (or a string) and returns the last element (or character).
+```typescript
+import last from "https://deno.land/x/denofun/lib/last.ts";
+
+last([1, "test", 3]); // => 3
+last("hello world!"); // => "!"
 ```
 
 ### map
