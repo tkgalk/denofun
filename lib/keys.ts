@@ -1,5 +1,3 @@
-import curry from "./curry.ts";
-
 /**
  * **keys** returns key names from a provided object
  * @param x input object
