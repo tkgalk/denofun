@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - last function
 - GitHub Actions for CI
 - pluck function
+- slice function
 
 ### Changed
 - added more types
