@@ -327,6 +327,14 @@ reverse([1, 2, 3, 4, 5]); // => [5, 4, 3, 2, 1]
 reverse("hello world!"); // => ["!dlrow olleh"]
 ```
 
+**slice** return a given slice of an array or string (wrapper over Array.prototype.slice)
+```typescript
+import slice from "https://deno.land/x/denofun/lib/slice.ts";
+
+slice(1, 3, ['a', 'b', 'c', 'd', 'e']); // => ['b', 'c']
+slice(1, Infinity, ['b', 'c', 'd', 'e']); // => ['b', 'c', 'd', 'e']
+```
+
 ### sort
 **sort** performs a sorting of array or string via provided sorting function.
 
