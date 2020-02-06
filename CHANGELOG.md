@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+### Changed
+### Removed
+
+## [0.2.0] - 2020-02-06
+### Added
 - keys function
 - omit function
 - sort function
@@ -38,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fixed unintentional mutation in sort function
 - sort supports any numbers now, not only 1, 0 and -1
 
-## Removed
+### Removed
 - removed doubled `test.ts` file
 - removed importmaps completely (check [issue #20](https://github.com/galkowskit/denofun/issues/20))
 - removed curry-by-default behaviour
@@ -56,5 +61,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - reverse function
 - tail function
 
-[Unreleased]: https://github.com/galkowskit/denofun/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/galkowskit/denofun/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/galkowskit/denofun/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/galkowskit/denofun/releases/tag/v0.1.0
