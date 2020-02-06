@@ -255,7 +255,16 @@ nth(4, "hello world!"); // => "o"
 import omit from "https://deno.land/x/denofun/lib/omit.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
-omit(["make"], car); // => { model: 'Giulia' }
+omit(["make"], car); // => { model: "Giulia" }
+```
+
+### pick
+**pick** returns a copy of an object with only the keys selected
+```typescript
+import pick from "https://deno.land/x/denofun/lib/pick.ts";
+
+const car = { make: "Alfa Romeo", model: "Giulia", doors: 5 };
+pick(["make", "model"], car); // => { make: "Alfa Romeo", model: "Giulia" }
 ```
 
 ### pipe

@@ -27,5 +27,6 @@ import "./includes.test.ts";
 import "./last.test.ts";
 import "./pluck.test.ts";
 import "./slice.test.ts";
+import "./pick.test.ts";
 
 runTests();
