@@ -144,12 +144,12 @@ find(findToyota, cars); // => { make: "Toyota", model: "Mirai" }
 ```
 
 ### flatten
-**flatten** takes an array of elements and flattens it until all elements are on the root-level (`flat(Infinity)`).
+**flatten** takes an array of elements and flattens it by one level.
 ```typescript
 import flatten from "https://deno.land/x/denofun/lib/find.ts";
 
 flatten([[1, 2, 3], [4, 5, 6]]); // => [1, 2, 3, 4, 5, 6]
-flatten([[1, [2, 3], [4, [5, [6]]]]]); // => [1, 2, 3, 4, 5, 6]
+flatten([[1, [2, 3], [4, [5, [6]]]]]); // => [1, 2, 3, 4, [5, [6]]]
 flatten([]); // => []
 ```
 
