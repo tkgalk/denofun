@@ -240,6 +240,16 @@ const numbers = [1, 2, 3, 4, 5];
 map(n => n * 2, numbers); // => [2, 4, 6, 8, 10]
 ```
 
+### memoize
+**memoize** returns a function that remembers the result of a function with a given parameters so it can cache the previous results.
+```typescript
+const double = n => n * 2;
+const memoizedDouble = memoize(double);
+
+memoizedDouble(2); // => 4 (calculated)
+memoizedDouble(2); // => 4 (cached)
+```
+
 ### nth
 **nth** returns element under given index, if negative index is provided element at (length + index) is returned.
 ```typescript
@@ -303,7 +313,7 @@ const cars = [
 pluck("make", cars); // => [ "Alfa Romeo", "Alfa Romeo", "Ford", "Ford", "Toyota", "Toyota", "Toyota" ]
 ```
 
-###prop
+### prop
 **prop** returns a value from object under a specific key.
 ```typescript
 import prop from "https://deno.land/x/denofun/lib/prop.ts";
