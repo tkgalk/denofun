@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - flatten function flattens by one level instead of Infinity
+- locked all std dependencies (`std/testing`) to `v0.32.0`
 
 ### Removed
 
