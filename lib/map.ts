@@ -4,6 +4,6 @@
  * @param xs elements that function will be applied to
  * @returns new array with results of the map
  */
-export default function map<T, R>(fn: (x: T) => R, xs: T[]): R[] {
+export default function map<Arg, Res>(fn: (x: Arg) => Res, xs: Arg[]): Res[] {
     return xs.map(fn);
 }

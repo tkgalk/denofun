@@ -3,6 +3,8 @@
  * @param xs elements that function will be applied to
  * @returns the last element of the array
  */
-export default function last<T extends any>(xs: T[] | string): string | T {
+export default function last(xs: string): string;
+export default function last<A>(xs: A[]): A;
+export default function last<A>(xs: string | A[]): string | A {
     return xs[xs.length - 1];
 }

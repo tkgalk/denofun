@@ -4,7 +4,7 @@
  * @param arr the list of elements to be sorted
  * @returns a object with elements grouped by preferred key
  */
-export default function groupBy<T>(fn: (x: T) => any, arr: T[]) {
+export default function groupBy<A>(fn: (x: A) => any, arr: A[]) {
     const result = {};
     for (let i = 0; i < arr.length; i++) {
         const item = arr[i];

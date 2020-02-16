@@ -4,6 +4,6 @@
  * @param xs an array of elements to be searched
  * @returns first element that returned true
  */
-export default function find<T>(fn: (x: T) => boolean, xs: T[]): T {
+export default function find<A>(fn: (x: A) => boolean, xs: A[]): A {
     return xs.find(fn);
 }

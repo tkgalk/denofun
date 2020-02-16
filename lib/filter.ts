@@ -5,6 +5,6 @@
  * @param xs input array to be filtered
  * @returns filtered output array
  */
-export default function filter<T>(fn: (x: T) => boolean, xs: T[]): T[] {
+export default function filter<A>(fn: (x: A) => boolean, xs: A[]): A[] {
     return xs.filter(fn);
 }
