@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import head from '../lib/head.ts';
 
-test({
+Deno.test({
     name: "head",
     fn(): void {
         assertEquals(head([]), undefined);

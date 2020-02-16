@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import concat from '../lib/concat.ts';
 
-test({
+Deno.test({
     name: "concat",
     fn(): void {
         assertEquals(concat('hello', 'world'), 'helloworld');

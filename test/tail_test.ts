@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import tail from '../lib/tail.ts';
 
-test({
+Deno.test({
     name: "tail",
     fn(): void {
         assertEquals(tail([]), []);

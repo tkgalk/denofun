@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import curry from '../lib/curry.ts';
 
@@ -11,7 +10,7 @@ const curriedAdd = curry(add);
 const add5 = curriedAdd(5);
 const add5and10 = curriedAdd(5, 10);
 
-test({
+Deno.test({
     name: "curry",
     fn(): void {
         assertEquals(typeof curry(add), 'function');

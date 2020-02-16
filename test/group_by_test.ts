@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import groupBy from '../lib/group_by.ts';
 
@@ -17,7 +16,7 @@ function byMake(car: { make: string, model: string }) {
     return car.make;
 };
 
-test({
+Deno.test({
     name: "groupBy",
     fn(): void {
         assertEquals(groupBy(byMake, cars), {
