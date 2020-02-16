@@ -1,9 +1,8 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import nth from '../lib/nth.ts';
 
-test({
+Deno.test({
     name: "nth",
     fn(): void {
         assertEquals(nth(2, [0, 1, 2, 3, 4]), 2);

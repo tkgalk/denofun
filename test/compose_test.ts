@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import compose from '../lib/compose.ts';
 
@@ -18,7 +17,7 @@ function sub(a, b) {
 const add5mul2 = compose(mul2, add5);
 const mul2sub = compose(mul2, sub);
 
-test({
+Deno.test({
     name: "compose",
     fn(): void {
         assertEquals(add5mul2(5), 20);

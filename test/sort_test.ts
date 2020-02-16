@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import sort from '../lib/sort.ts';
 
@@ -31,7 +30,7 @@ function sortStringsByLength (a: string, b: string) {
     }
 }
 
-test({
+Deno.test({
     name: "sort",
     fn(): void {
         const numbers = [1, 6, 2, 3, 5];

@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import pluck from "../lib/pluck.ts";
 
@@ -13,7 +12,7 @@ const cars = [
     { make: "Toyota", model: "Supra" }
 ];
 
-test({
+Deno.test({
     name: "pluck",
     fn(): void {
         assertEquals(pluck("make", cars), [

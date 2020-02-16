@@ -1,11 +1,10 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import prop from '../lib/prop.ts';
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 
-test({
+Deno.test({
     name: "prop",
     fn(): void {
         assertEquals(prop("make", car), "Alfa Romeo");

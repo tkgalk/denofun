@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import pipe from '../lib/pipe.ts';
 
@@ -18,7 +17,7 @@ function sub(a, b) {
 const mul2add5 = pipe(mul2, add5);
 const submul2 = pipe(sub, mul2);
 
-test({
+Deno.test({
     name: "pipe",
     fn(): void {
         assertEquals(mul2add5(5), 15);

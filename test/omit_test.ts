@@ -1,5 +1,4 @@
-import { test } from "https://deno.land/std@v0.32.0/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std@v0.32.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import omit from '../lib/omit.ts';
 
@@ -9,7 +8,7 @@ const a = {
     c: 3,
 };
 
-test({
+Deno.test({
     name: "omit",
     fn(): void {
         assertEquals(omit(['b', 'c'], a), { a: 1 });
