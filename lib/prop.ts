@@ -1,6 +1,6 @@
 /**
  * **prop** returns a value from object under a specific key
- * @param key property's key name 
+ * @param key property's key name
  * @param obj input object
  * @returns value of object's `key` property
  */

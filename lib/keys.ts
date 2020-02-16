@@ -3,6 +3,6 @@
  * @param x input object
  * @returns an array of key names
  */
-export default function keys(x: object): any[] {
+export default function keys(x: object): string[] {
     return Object.keys(x);
 }

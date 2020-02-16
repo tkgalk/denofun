@@ -3,7 +3,9 @@
  * @param x array or string to be reversed
  * @returns a reversed array or string
  */
-export default function reverse<T>(x: T[] | string): T[] | string {
+export default function reverse(x: string): string;
+export default function reverse<A>(x: A[]): A[];
+export default function reverse<A>(x: string | A[]): string | A[] {
     if (Array.isArray(x)) {
         return x.reverse();
     }

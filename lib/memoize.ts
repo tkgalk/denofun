@@ -3,9 +3,9 @@
  * @param fn function which results can be cached
  * @returns function returning cached results (after first call)
  */
-export default function memoize<T>(fn: (...xs: any[]) => T): (...xs: any[]) => T {
+export default function memoize<A>(fn: (...xs: any[]) => A): (...xs: any[]) => A {
     const cache = new Map();
-    return (...xs: any[]): T => {
+    return (...xs: any[]): A => {
         const args = JSON.stringify(xs);
 
         if (cache.has(args)) {

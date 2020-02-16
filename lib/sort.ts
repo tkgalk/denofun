@@ -6,6 +6,6 @@
  * @param xs array or string to be sorted
  * @returns a sorted array or string
  */
-export default function sort<T>(fn: (a: T, b: T) => number, xs: T[]): T[] {
+export default function sort<A>(fn: (a: A, b: A) => number, xs: A[]): A[] {
     return [...xs].sort(fn);
 }
