@@ -91,6 +91,137 @@ const filterAlfas = filterCarsByMake("Alfa Romeo");
 cars.filter(filterAlfas); // => [ { make: "Alfa Romeo", model: "Giulia" }, { make: "Alfa Romeo", model: "Stelvio" } ]
 ```
 
+### Either
+**Either** is an interface that wraps values or Errors and can be used to:
+ - handle error cases without throwing and catching errors
+ - provide an alternative to Union types with runtime type safety and no need for typeguards
+```typescript
+import { Either } from "https://deno.land/x/denofun/lib/either.ts";
+
+function handleUnion(stringOrNumber: Either<string, number>): number {
+    const value = stringOrNumber
+        .map((s: string) => s.toUpperCase()) // .map() applies the function to the left value, Either is a Functor
+        .left.map((s: string) => s.toLowerCase()) // but you can also use the .left shorthand for more clarity
+        .right.map((n: number) => n + 1) // .right will provide a way to apply functions to the right value
+        .flatMap((s) => { // Either is also a Monad, .flatMap() is also available on .left and .right
+            const n = parseFloat(s);
+            if (n) {
+                return right(n);
+            } else {
+                return left(s);
+            }
+        });
+    value.get() // => string | number
+    value.coerce(parseFloat) // => number (possibly NaN), also available on .left and .right
+
+    return value.mapEither(parseFloat, (n) => 1 / n) // => number (possibly NaN)
+}
+
+function handleError(stringOrError: Either<string, Error>): string {
+    const safeString: string = stringOrError.catch((err) => err.message);
+    const value: string = stringOrError.try(); // will either throw the error or return the left value
+    const errorValue: stringOrError.right.try(); // will either throw a string or return an error as a value
+
+    return safeString;
+}
+```
+
+### either.error
+**either.error** wraps a value in the Either interface as a right value.
+`JSON.stringify()` will throw the value (ideally an Error)
+```typescript
+import either from "https://deno.land/x/denofun/lib/either.ts";
+// import error from "https://deno.land/x/denofun/lib/either/error.ts"; // is also available
+
+const numberOrError = either.jsonError<number, Error>(new Error("message"));
+numberOrError.get() // returns the error without throwing it
+numberOrError.try() // throws the error
+numberOrError.right.try() // returns the error with strict static typing
+JSON.stringify(rightString) // throws the Error
+```
+
+### either.jsonError
+**either.jsonError** wraps a value in the Either interface as a right value.
+`JSON.stringify()` will serialize it with its name, message, *and stack trace*, if available.
+```typescript
+import either from "https://deno.land/x/denofun/lib/either.ts";
+// import jsonError from "https://deno.land/x/denofun/lib/either/jsonError.ts"; // is also available
+
+const numberOrError = either.jsonError<number, Error>(new Error("message"));
+numberOrError.get() // returns the error without throwing it
+numberOrError.try() // throws the error
+numberOrError.right.try() // returns the error with strict static typing
+JSON.stringify(rightString) // => {"name": "Error", "message": "message", "stack": "..."};
+```
+
+### either.left
+**either.left** wraps a value in the Either interface as a left value;
+```typescript
+import either from "https://deno.land/x/denofun/lib/either.ts";
+// import left from "https://deno.land/x/denofun/lib/either/left.ts"; // is also available
+
+const left12 = either.left<number, string>(12)
+left12.get() // => 12 with string | number union type, but no runtime error
+left12.try() // => 12 with strict static typing but potentially a runtime error (not in this case)
+left12.right.try() // throws 12
+```
+
+### either.partition
+**either.partition** partitions an array of `Either<Left, Right>` in a tuple or `Left[]` and `Right[]`.
+```typescript
+import partition from "https://deno.land/x/denofun/lib/either/paritition.ts";
+
+const eitherValues: Array<Either<number, string>> = [left(1), left(3), right("hello"), left(0.5), right("0.5"), right("one"), left(NaN)];
+const [leftValues, rightValues]: [number[], string[]] = partition(eitherValues);
+
+leftValues // => [1, 3, 0.5, NaN]
+rightValues // => ["hello", "0.5", "one"]
+
+leftValues.length + rightValues.length === 7 // => true
+```
+
+### either.tryCatch
+**either.tryCatch** calls its callback argument immediately and handles any synchronous errors by returning an `Either<Type, Error>`;
+```typescript
+import tryCatch from "https://deno.land/x/denofun/lib/either/tryCatch.ts";
+
+const numberOrError: Either<number, Error> = tryCatch(() => {
+    throw new Error("message");
+});
+
+numberOrError.get() // returns the error as a value
+numberOrError
+    .map((n) => n + 1) // no-op
+    .try() // throws the error
+```
+
+### either.tryCatchAsync
+**either.tryCatchAsync** calls its callback argument immediately and handles all synchronous **and** asynchronous errors by returning a `Promise<Either<Type, Error>>`;
+```typescript
+import {tryCatchAsync} from "https://deno.land/x/denofun/lib/either/tryCatch.ts";
+
+setTimeout(async () => {
+    const numberOrError: Either<number, Error> = await tryCatchAsync(() => Promise.reject(new Error("message")));
+
+    numberOrError.get() // returns the error as a value
+    numberOrError
+        .map((n) => n + 1) // no-op
+        .try() // throws the error
+}, 1);
+```
+
+### either.right
+**either.right** wraps a value in the Either interface as a right value;
+```typescript
+import either from "https://deno.land/x/denofun/lib/either.ts";
+// import right from "https://deno.land/x/denofun/lib/either/right.ts"; // is also available
+
+const rightString = either.right<number, string>("hello")
+rightString.get() // "hello" with string | number union type, but no runtime error
+rightString.try() // throws "hello"
+rightString.right.try() // returns "hello" with strict static typing
+```
+
 ### equals
 **equals** checks if two values are equal, **warning:** for non-primitives uses JSON parsing (for now).
 ```typescript

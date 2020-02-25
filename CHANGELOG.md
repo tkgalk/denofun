@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - memoize function
 - Maybe type and maybe constructor
 - mapMaybe function
+- Either type and its constructors: left, right, jsonError,and error
+- Either helpers: partition, tryCatch, and tryCatchAsync
 
 ### Changed
 - flatten function flattens by one level instead of Infinity

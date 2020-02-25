@@ -6,4 +6,4 @@ Contributors to denofun project (sorted alphabetically).
 - **[Weronika Wróbel](https://www.behance.net/weronikawrobel)**
     - denofun logo
 - **[Adrien El Zein](https://github.com/adrizein)**
-    - added maybe
+    - added maybe and either
