@@ -1,15 +1,16 @@
 /**
- * Maybe<T> is a Functor (map), a Monad (flatMap), and a Filtrable (filter).
+ * Maybe<T> is a Functor (map), a Monad (flatMap), and a Filtrable (filter, mapMaybe).
  * It contains a possibly empty value.
  * // TODO: implement the Applicative and Alternative interface
  */
-export interface Maybe<T> {
+export interface Maybe<T> extends Iterable<T> {
     get(): T | undefined;
     default(t: T): T;
     toArray(): [] | [T];
     map<R>(f: (t: T) => R): Maybe<R>;
     flatMap<R>(f: (t: T) => Maybe<R>): Maybe<R>;
     filter(f: (t: T) => boolean): Maybe<T>;
+    mapMaybe<R>(f: (t: T) => Maybe<R>): Maybe<R>;
 
     toJSON(): T | undefined;
     toString(): string;
@@ -36,12 +37,22 @@ function nothing<T>(): Maybe<T> {
         filter(f) {
             return this;
         },
+        mapMaybe(f) {
+            return this.flatMap(f);
+        },
         toJSON() {
             return undefined;
         },
         toString() {
-            return '';
-        }
+            return "";
+        },
+        [Symbol.iterator]() {
+            return {
+                next() {
+                    return { done: true, value: undefined };
+                },
+            };
+        },
     }
 }
 
@@ -69,12 +80,28 @@ function just<T>(value: T): Maybe<T> {
                 return nothing();
             }
         },
+        mapMaybe(f) {
+            return this.flatMap(f);
+        },
         toJSON() {
             return value;
         },
         toString() {
             return String(value);
-        }
+        },
+        [Symbol.iterator]() {
+            let done = false;
+            return {
+                next() {
+                    if (done) {
+                        return { done: true, value: undefined };
+                    } else {
+                        done = true;
+                        return { done: false, value };
+                    }
+                },
+            };
+        },
     }
 }
 
@@ -85,4 +112,15 @@ export default function maybe<T>(t?: T): Maybe<T> {
     } else {
         return just(t);
     }
+}
+
+
+// TODO: create the Filtrable submodule and move mapMaybe in it
+export function mapMaybe<A, B>(f: (a: A) => Maybe<B>, listA: A[]): B[] {
+    const result: B[] = [];
+    for (const a of listA) {
+        f(a).map((b) => result.push(b));
+    }
+
+    return result;
 }
