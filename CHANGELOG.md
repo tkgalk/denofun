@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - adds pick function
 - memoize function
+- Maybe type and maybe constructor
+- mapMaybe function
 
 ### Changed
 - flatten function flattens by one level instead of Infinity

@@ -5,3 +5,5 @@ Contributors to denofun project (sorted alphabetically).
     - owner and main contributor
 - **[Weronika Wróbel](https://www.behance.net/weronikawrobel)**
     - denofun logo
+- **[Adrien El Zein](https://github.com/adrizein)**
+    - added maybe

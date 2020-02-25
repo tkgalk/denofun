@@ -240,6 +240,19 @@ const numbers = [1, 2, 3, 4, 5];
 map(n => n * 2, numbers); // => [2, 4, 6, 8, 10]
 ```
 
+### maybe
+**maybe** wraps a potentially  `null` or `undefined` value in a `Maybe` type which provides 
+the map, flatMap, filter, and mapMaybe methods
+```typescript
+import maybe from "https://deno.land/x/denofun/lib/maybe.ts";
+
+const numbers = [1, 2, 3, 4, 5];
+const maybeNumber = maybe(numbers.find((n) => n > 2));
+maybeNumber.get(); // => 3
+maybeNumber.map((n) => n + 1).get(); // => 4
+maybeNumber.flatMap((n) => n !== 3 ? maybe(1/(n - 3)) : maybe()).get(); // => undefined
+```
+
 ### memoize
 **memoize** returns a function that remembers the result of a function with a given parameters so it can cache the previous results.
 ```typescript
