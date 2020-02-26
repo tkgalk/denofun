@@ -34,20 +34,20 @@ Deno.test({
 
 
 function testRight(handler: <L, R>(t: R) => Either<L, R>) {
-        assertThrows(() => handler<number, Error>(new Error('1')).try());
-        assertEquals(handler<number, string>('1').get(), '1');
-        assertThrows(() => handler<number, Error>(new Error('1')).map((t) => t + 1).try());
-        assertEquals(handler<number, string>('1').map((t) => t + 1).get(), '1');
-        assertThrows(() => handler<number, Error>(new Error('1')).flatMap((t) => left(t + 1)).try());
-        assertEquals(handler<number, string>('1').flatMap((t) => left(t + 1)).get(), '1');
-        assertThrows(() => handler<number, Error>(new Error('1')).left.map((t) => t + 1).try());
-        assertEquals(handler<number, string>('1').left.map((t) => t + 1).get(), '1');
-        assertEquals(handler<number, string>('1').left.coerce((t) => t.toString()), '1');
-        assertEquals(handler<number, string>('a').right.map((s: string) => s.toUpperCase()).get(), 'A');
-        assertEquals(handler<number, string>('1').right.coerce(parseFloat), 1);
-        assertEquals(handler<number, string>('1').mapEither((n: number) => n.toString(), (s: string) => s), '1')
-        assertEquals(handler(1).toString(), '1');
-        assertEquals(handler<number, string>('1').catch(parseFloat), 1)
+    assertThrows(() => handler<number, Error>(new Error('1')).try());
+    assertEquals(handler<number, string>('1').get(), '1');
+    assertThrows(() => handler<number, Error>(new Error('1')).map((t) => t + 1).try());
+    assertEquals(handler<number, string>('1').map((t) => t + 1).get(), '1');
+    assertThrows(() => handler<number, Error>(new Error('1')).flatMap((t) => left(t + 1)).try());
+    assertEquals(handler<number, string>('1').flatMap((t) => left(t + 1)).get(), '1');
+    assertThrows(() => handler<number, Error>(new Error('1')).left.map((t) => t + 1).try());
+    assertEquals(handler<number, string>('1').left.map((t) => t + 1).get(), '1');
+    assertEquals(handler<number, string>('1').left.coerce((t) => t.toString()), '1');
+    assertEquals(handler<number, string>('a').right.map((s: string) => s.toUpperCase()).get(), 'A');
+    assertEquals(handler<number, string>('1').right.coerce(parseFloat), 1);
+    assertEquals(handler<number, string>('1').mapEither((n: number) => n.toString(), (s: string) => s), '1')
+    assertEquals(handler(1).toString(), '1');
+    assertEquals(handler<number, string>('1').catch(parseFloat), 1)
 }
 
 
