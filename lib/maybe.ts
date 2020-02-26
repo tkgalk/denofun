@@ -46,13 +46,7 @@ function nothing<T>(): Maybe<T> {
         toString() {
             return "";
         },
-        [Symbol.iterator]() {
-            return {
-                next() {
-                    return { done: true, value: undefined };
-                },
-            };
-        },
+        *[Symbol.iterator]() {},
     }
 }
 
@@ -84,23 +78,14 @@ function just<T>(value: T): Maybe<T> {
             return this.flatMap(f);
         },
         toJSON() {
+            console.log('toJSON', value);
             return value;
         },
         toString() {
             return String(value);
         },
-        [Symbol.iterator]() {
-            let done = false;
-            return {
-                next() {
-                    if (done) {
-                        return { done: true, value: undefined };
-                    } else {
-                        done = true;
-                        return { done: false, value };
-                    }
-                },
-            };
+        *[Symbol.iterator]() {
+            yield value;
         },
     }
 }

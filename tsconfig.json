@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "strict": false,
-        "alwaysStrict": true
+        "alwaysStrict": true,
+        "noImplicitAny": false
     }
 }
