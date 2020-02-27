@@ -169,7 +169,8 @@ left12.right.try() // throws 12
 ### either.partition
 **either.partition** partitions an array of `Either<Left, Right>` in a tuple or `Left[]` and `Right[]`.
 ```typescript
-import partition from "https://deno.land/x/denofun/lib/either/paritition.ts";
+import { Either } from "https://deno.land/x/denofun/lib/either.ts";
+import partition from "https://deno.land/x/denofun/lib/either/partition.ts";
 
 const eitherValues: Array<Either<number, string>> = [left(1), left(3), right("hello"), left(0.5), right("0.5"), right("one"), left(NaN)];
 const [leftValues, rightValues]: [number[], string[]] = partition(eitherValues);
@@ -180,9 +181,22 @@ rightValues // => ["hello", "0.5", "one"]
 leftValues.length + rightValues.length === 7 // => true
 ```
 
-### either.tryCatch
-**either.tryCatch** calls its callback argument immediately and handles any synchronous errors by returning an `Either<Type, Error>`;
+### either.right
+**either.right** wraps a value in the Either interface as a right value.
 ```typescript
+import either from "https://deno.land/x/denofun/lib/either.ts";
+// import right from "https://deno.land/x/denofun/lib/either/right.ts"; // is also available
+
+const rightString = either.right<number, string>("hello")
+rightString.get() // "hello" with string | number union type, but no runtime error
+rightString.try() // throws "hello"
+rightString.right.try() // returns "hello" with strict static typing
+```
+
+### either.tryCatch
+**either.tryCatch** calls its callback argument immediately and handles any synchronous errors by returning an `Either<Type, Error>`.
+```typescript
+import { Either } from "https://deno.land/x/denofun/lib/either.ts";
 import tryCatch from "https://deno.land/x/denofun/lib/either/tryCatch.ts";
 
 const numberOrError: Either<number, Error> = tryCatch(() => {
@@ -196,9 +210,10 @@ numberOrError
 ```
 
 ### either.tryCatchAsync
-**either.tryCatchAsync** calls its callback argument immediately and handles all synchronous **and** asynchronous errors by returning a `Promise<Either<Type, Error>>`;
+**either.tryCatchAsync** calls its callback argument immediately and handles all synchronous **and** asynchronous errors by returning a `Promise<Either<Type, Error>>`.
 ```typescript
-import {tryCatchAsync} from "https://deno.land/x/denofun/lib/either/tryCatch.ts";
+import { Either } from "https://deno.land/x/denofun/lib/either.ts";
+import { tryCatchAsync } from "https://deno.land/x/denofun/lib/either/try_catch.ts";
 
 setTimeout(async () => {
     const numberOrError: Either<number, Error> = await tryCatchAsync(() => Promise.reject(new Error("message")));
@@ -208,18 +223,6 @@ setTimeout(async () => {
         .map((n) => n + 1) // no-op
         .try() // throws the error
 }, 1);
-```
-
-### either.right
-**either.right** wraps a value in the Either interface as a right value;
-```typescript
-import either from "https://deno.land/x/denofun/lib/either.ts";
-// import right from "https://deno.land/x/denofun/lib/either/right.ts"; // is also available
-
-const rightString = either.right<number, string>("hello")
-rightString.get() // "hello" with string | number union type, but no runtime error
-rightString.try() // throws "hello"
-rightString.right.try() // returns "hello" with strict static typing
 ```
 
 ### equals
