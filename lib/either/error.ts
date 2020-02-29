@@ -53,6 +53,9 @@ export default function error<Left, Right>(value: Right): Either<Left, Right> {
         },
         toString() {
             return String(value);
+        },
+        [Deno.symbols.customInspect]() {
+            return `error(${value})`;
         }
     }
 }

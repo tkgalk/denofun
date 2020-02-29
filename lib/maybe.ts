@@ -14,6 +14,7 @@ export interface Maybe<T> extends Iterable<T> {
 
     toJSON(): T | undefined;
     toString(): string;
+    [Deno.symbols.customInspect](): string;
 }
 
 // nothing is a function to avoid side effects due to mutations of a global object
@@ -47,6 +48,9 @@ function nothing<T>(): Maybe<T> {
             return "";
         },
         *[Symbol.iterator]() {},
+        [Deno.symbols.customInspect]() {
+            return "nothing()";
+        }
     }
 }
 
@@ -87,6 +91,9 @@ function just<T>(value: T): Maybe<T> {
         *[Symbol.iterator]() {
             yield value;
         },
+        [Deno.symbols.customInspect]() {
+            return `just(${value})`;
+        }
     }
 }
 

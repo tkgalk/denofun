@@ -61,6 +61,9 @@ export default function jsonError<Left, Right>(value: Right): Either<Left, Right
         },
         toString() {
             return String(value);
+        },
+        [Deno.symbols.customInspect]() {
+            return `jsonError(${value})`;
         }
     }
 }
