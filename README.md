@@ -133,7 +133,7 @@ function handleError(stringOrError: Either<string, Error>): string {
 import either from "https://deno.land/x/denofun/lib/either.ts";
 // import error from "https://deno.land/x/denofun/lib/either/error.ts"; // is also available
 
-const numberOrError = either.jsonError<number, Error>(new Error("message"));
+const numberOrError = either.error<number, Error>(new Error("message"));
 numberOrError.get() // returns the error without throwing it
 numberOrError.try() // throws the error
 numberOrError.right.try() // returns the error with strict static typing
