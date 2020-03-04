@@ -5,7 +5,7 @@
  * @returns a object with elements grouped by preferred key
  */
 export default function groupBy<A>(fn: (x: A) => any, arr: A[]) {
-    const result = {};
+    const result: { [key: string]: any } = {};
     for (let i = 0; i < arr.length; i++) {
         const item = arr[i];
         const key = fn(item);

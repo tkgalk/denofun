@@ -4,8 +4,8 @@
  * @param object object to be copied
  * @returns an object without specified keys
  */
-export default function omit(keys: string[], object: object): object {
-    let target = {};
+export default function omit(keys: string[], object: { [key: string]: any }): object {
+    let target: { [key: string]: any } = {};
 
     for (let i in object) {
         if (keys.indexOf(i) >= 0) continue;

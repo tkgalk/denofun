@@ -2,15 +2,15 @@ import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import compose from '../lib/compose.ts';
 
-function add5(n) {
+function add5(n: number) {
     return n + 5;
 }
 
-function mul2(n) {
+function mul2(n: number) {
     return n * 2;
 }
 
-function sub(a, b) {
+function sub(a: number, b: number) {
     return a - b;
 }
 

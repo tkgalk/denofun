@@ -2,7 +2,7 @@ import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import reduce from '../lib/reduce.ts';
 
-function add(a, b) {
+function add(a: number, b: number) {
     return a + b;
 }
 

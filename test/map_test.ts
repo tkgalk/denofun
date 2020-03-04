@@ -2,7 +2,7 @@ import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import map from '../lib/map.ts';
 
-function double(n) {
+function double(n: number) {
     return n * 2;
 }
 

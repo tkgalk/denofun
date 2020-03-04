@@ -10,7 +10,7 @@ export default function curry(fn: (...args: any[]) => any) {
             return fn(...args);
         }
 
-        return function(a) {
+        return function(a: any) {
             return curried(...[...args, a]);
         }
     }

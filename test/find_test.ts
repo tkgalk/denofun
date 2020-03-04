@@ -2,7 +2,7 @@ import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import find from '../lib/find.ts';
 
-function findToyota(car) {
+function findToyota(car: { make: string; }) {
     return car.make === 'Toyota';
 }
 
