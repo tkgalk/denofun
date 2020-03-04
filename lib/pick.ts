@@ -4,8 +4,8 @@
  * @param object object to be copied
  * @returns an object with specified keys only
  */
-export default function pick(keys: string[], object: object): object {
-    let target = {};
+export default function pick(keys: string[], object: { [key: string]: any }): object {
+    let target: { [key: string]: any } = {};
 
     for (let i of keys) {
         if (i in object) {

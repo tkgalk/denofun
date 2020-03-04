@@ -5,7 +5,7 @@
  */
 export default function reverse(x: string): string;
 export default function reverse<A>(x: A[]): A[];
-export default function reverse<A>(x: string | A[]): string | A[] {
+export default function reverse<A>(x: string | A[]): A[] | string | undefined {
     if (Array.isArray(x)) {
         return x.reverse();
     }

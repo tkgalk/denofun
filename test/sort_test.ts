@@ -14,6 +14,8 @@ function sortNumbers (a: number, b: number) {
     if (a < b) {
         return -1;
     }
+
+    return 0;
 }
 
 function sortStringsByLength (a: string, b: string) {
@@ -28,6 +30,8 @@ function sortStringsByLength (a: string, b: string) {
     if (a.length < b.length) {
         return -1;
     }
+
+    return 0;
 }
 
 Deno.test({

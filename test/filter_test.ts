@@ -2,7 +2,7 @@ import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
 
 import filter from '../lib/filter.ts';
 
-function isLessThan5(n) {
+function isLessThan5(n: number) {
     return n < 5;
 }
 

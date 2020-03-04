@@ -564,6 +564,6 @@ If you want to contribute to Denofun:
 
 1. Clone this repository.
 2. Make sure you have Deno installed.
-3. You can run tests with `deno test **/*_test.ts` (or `deno test ./test` if [#4002](https://github.com/denoland/deno/pull/4002) is fixed. :)).
+3. You can run tests with `deno test`.
 
 Thanks!
