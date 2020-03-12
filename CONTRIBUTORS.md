@@ -7,3 +7,5 @@ Contributors to denofun project (sorted alphabetically).
     - denofun logo
 - **[Adrien El Zein](https://github.com/adrizein)**
     - added maybe and either
+- **[Hoàng Văn Khải](https://github.com/KSXGitHub)**
+    - added partition function
