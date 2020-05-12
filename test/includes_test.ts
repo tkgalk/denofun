@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@v0.33.0/testing/asserts.ts"
+import { assertEquals } from "https://deno.land/std@v0.42.0/testing/asserts.ts"
 
 import includes from "../lib/includes.ts";
 

@@ -29,5 +29,5 @@ export default interface Either<Left, Right> {
 
     toJSON(): Left | Right;
     toString(): string;
-    [Deno.symbols.customInspect](): string;
+    [Deno.customInspect](): string;
 }

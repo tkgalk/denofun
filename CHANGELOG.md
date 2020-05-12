@@ -19,8 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - locked all std dependencies (`std/testing`) to `v0.32.0`
 - added better typings for places where types could be ambigous
 - migrated to `deno test`
-- bumped `std` version to `v0.33.0`
+- bumped `std` version to `v0.42.0`
 - fixes `prop` failing TS checks when being used
+- account for removal of `Deno.symbols` namespace
 
 ### Removed
 

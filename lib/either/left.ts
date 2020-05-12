@@ -54,7 +54,7 @@ export default function left<Left, Right>(value: Left): Either<Left, Right> {
         toString() {
             return String(value);
         },
-        [Deno.symbols.customInspect]() {
+        [Deno.customInspect]() {
             return `left(${value})`;
         }
     }
