@@ -1,4 +1,4 @@
-import { assertEquals, assertThrows, assertThrowsAsync, assert } from "https://deno.land/std@v0.33.0/testing/asserts.ts";
+import { assertEquals, assertThrows, assertThrowsAsync, assert } from "https://deno.land/std@v0.42.0/testing/asserts.ts";
 
 import left from '../lib/either/left.ts';
 import right from '../lib/either/right.ts';

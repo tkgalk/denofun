@@ -9,3 +9,5 @@ Contributors to denofun project (sorted alphabetically).
     - added maybe and either
 - **[Hoàng Văn Khải](https://github.com/KSXGitHub)**
     - added partition function
+- **[Jake McCloskey](https://github.com/jakemccloskey)**
+    - fixed some issues to to changes in Deno
