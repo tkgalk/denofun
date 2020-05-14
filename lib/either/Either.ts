@@ -8,26 +8,30 @@
  * // TODO: implement the Applicative and Alternative interface
  */
 export default interface Either<Left, Right> {
-    map<Result>(f: (t: Left) => Result): Either<Result, Right>;
-    flatMap<Result>(f: (t: Left) => Either<Result, Right>): Either<Result, Right>;
-    left: {
-        try(): Left;
-        map<Result>(f: (t: Left) => Result): Either<Result, Right>;
-        flatMap<Result>(f: (t: Left) => Either<Result, Right>): Either<Result, Right>;
-        coerce(f: (t: Left) => Right): Right;
-    };
-    right: {
-        try(): Right;
-        map<Result>(f: (t: Right) => Result): Either<Left, Result>;
-        flatMap<Result>(f: (t: Right) => Either<Left, Result>): Either<Left, Result>;
-        coerce(f: (t: Right) => Left): Left;
-    };
-    mapEither<Result>(fl: (l: Left) => Result, fr: (r: Right) => Result): Result;
-    catch(f: (r: Right) => Left): Left;
+  map<Result>(f: (t: Left) => Result): Either<Result, Right>;
+  flatMap<Result>(f: (t: Left) => Either<Result, Right>): Either<Result, Right>;
+  left: {
     try(): Left;
-    get(): Left | Right;
+    map<Result>(f: (t: Left) => Result): Either<Result, Right>;
+    flatMap<Result>(
+      f: (t: Left) => Either<Result, Right>,
+    ): Either<Result, Right>;
+    coerce(f: (t: Left) => Right): Right;
+  };
+  right: {
+    try(): Right;
+    map<Result>(f: (t: Right) => Result): Either<Left, Result>;
+    flatMap<Result>(
+      f: (t: Right) => Either<Left, Result>,
+    ): Either<Left, Result>;
+    coerce(f: (t: Right) => Left): Left;
+  };
+  mapEither<Result>(fl: (l: Left) => Result, fr: (r: Right) => Result): Result;
+  catch(f: (r: Right) => Left): Left;
+  try(): Left;
+  get(): Left | Right;
 
-    toJSON(): Left | Right;
-    toString(): string;
-    [Deno.customInspect](): string;
+  toJSON(): Left | Right;
+  toString(): string;
+  [Deno.customInspect](): string;
 }

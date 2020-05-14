@@ -6,5 +6,5 @@
 export default function last(xs: string): string;
 export default function last<A>(xs: A[]): A;
 export default function last<A>(xs: string | A[]): string | A {
-    return xs[xs.length - 1];
+  return xs[xs.length - 1];
 }

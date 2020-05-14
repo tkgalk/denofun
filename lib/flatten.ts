@@ -3,6 +3,6 @@
  * @param xs array to be flattened
  * @returns a flattened array
  */
-export default function flatten<A>(xs: A[]): A[] {
-    return xs.flat();
+export default function flatten(xs: any[]): any[] {
+  return xs.flat();
 }

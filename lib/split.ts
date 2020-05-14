@@ -5,5 +5,5 @@
  * @returns an array of strings
  */
 export default function split(d: string, s: string): string[] {
-    return s.split(d);
+  return s.split(d);
 }

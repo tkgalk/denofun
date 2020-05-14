@@ -5,5 +5,5 @@
  * @returns first element that returned true
  */
 export default function find<A>(fn: (x: A) => boolean, xs: A[]): A | undefined {
-    return xs.find(fn);
+  return xs.find(fn);
 }

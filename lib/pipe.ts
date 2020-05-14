@@ -4,5 +4,5 @@
  * @returns a new function composed from the provided functions
  */
 export default function pipe(...fns: ((...args: any[]) => any)[]) {
-    return fns.reduce((f, g) => (...args) => g(f(...args)));
+  return fns.reduce((f, g) => (...args) => g(f(...args)));
 }

@@ -5,5 +5,5 @@
  * @returns true or false
  */
 export default function has(x: string, y: Object) {
-    return y.hasOwnProperty(x);
+  return y.hasOwnProperty(x);
 }

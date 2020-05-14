@@ -4,5 +4,5 @@
  * @returns a new function composed from the provided functions
  */
 export default function compose(...fns: any[]) {
-    return fns.reduceRight((f, g) => (...args: any) => g(f(...args)));
+  return fns.reduceRight((f, g) => (...args: any) => g(f(...args)));
 }
