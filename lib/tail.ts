@@ -6,5 +6,5 @@
 export default function tail(xs: string): string;
 export default function tail<A>(xs: A[]): A[];
 export default function tail<A>(xs: string | A[]): string | A[] {
-    return xs.slice(1);
+  return xs.slice(1);
 }

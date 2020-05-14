@@ -9,9 +9,9 @@ import equals from "./equals.ts";
 export default function includes<A>(x: string, xs: string | A[]): boolean;
 export default function includes<A>(x: A, xs: A[]): boolean;
 export default function includes<A>(x: string | A, xs: string | A[]): boolean {
-    if (typeof(x) === "object" && typeof(xs) !== "string") {
-        return xs.some(y => equals(x, y));
-    }
+  if (typeof (x) === "object" && typeof (xs) !== "string") {
+    return xs.some((y) => equals(x, y));
+  }
 
-    return Array.from(xs as string).includes(x as string);
+  return Array.from(xs as string).includes(x as string);
 }

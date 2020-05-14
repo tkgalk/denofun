@@ -5,15 +5,18 @@
  * @param xs input array
  * @returns tuple of two array
  */
-export default function partition<A>(fn: (x: A) => boolean, xs: A[]): [A[], A[]] {
-    const left: A[] = [];
-    const right: A[] = [];
-    for (const x of xs) {
-        if (fn(x)) {
-            left.push(x);
-        } else {
-            right.push(x);
-        }
+export default function partition<A>(
+  fn: (x: A) => boolean,
+  xs: A[],
+): [A[], A[]] {
+  const left: A[] = [];
+  const right: A[] = [];
+  for (const x of xs) {
+    if (fn(x)) {
+      left.push(x);
+    } else {
+      right.push(x);
     }
-    return [left, right]
+  }
+  return [left, right];
 }

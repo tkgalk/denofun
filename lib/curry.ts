@@ -5,13 +5,13 @@
  * @returns curried version of the provided function
  */
 export default function curry(fn: (...args: any[]) => any) {
-    return function curried(...args: any[]) {
-        if (args.length >= fn.length) {
-            return fn(...args);
-        }
-
-        return function(a: any) {
-            return curried(...[...args, a]);
-        }
+  return function curried(...args: any[]) {
+    if (args.length >= fn.length) {
+      return fn(...args);
     }
+
+    return function (a: any) {
+      return curried(...[...args, a]);
+    };
+  };
 }

@@ -5,5 +5,5 @@
  * @returns value of object's `key` property
  */
 export default function prop(key: string, obj: { [key: string]: any }): any {
-    return obj[key];
+  return obj[key];
 }

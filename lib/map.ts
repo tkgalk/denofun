@@ -5,5 +5,5 @@
  * @returns new array with results of the map
  */
 export default function map<Arg, Res>(fn: (x: Arg) => Res, xs: Arg[]): Res[] {
-    return xs.map(fn);
+  return xs.map(fn);
 }

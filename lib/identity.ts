@@ -4,5 +4,5 @@
  * @returns x supplied element
  */
 export default function identity<T>(x: T): T {
-    return x;
+  return x;
 }

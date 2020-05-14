@@ -6,5 +6,5 @@
 export default function head(xs: string): string;
 export default function head<A>(xs: A[]): A;
 export default function head<A>(xs: A[] | string): A | string {
-    return xs[0];
+  return xs[0];
 }

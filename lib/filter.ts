@@ -6,5 +6,5 @@
  * @returns filtered output array
  */
 export default function filter<A>(fn: (x: A) => boolean, xs: A[]): A[] {
-    return xs.filter(fn);
+  return xs.filter(fn);
 }

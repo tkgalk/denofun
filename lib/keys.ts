@@ -4,5 +4,5 @@
  * @returns an array of key names
  */
 export default function keys(x: object): string[] {
-    return Object.keys(x);
+  return Object.keys(x);
 }

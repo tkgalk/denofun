@@ -7,5 +7,5 @@
  * @returns a sorted array or string
  */
 export default function sort<A>(fn: (a: A, b: A) => number, xs: A[]): A[] {
-    return [...xs].sort(fn);
+  return [...xs].sort(fn);
 }

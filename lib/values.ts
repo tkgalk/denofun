@@ -4,5 +4,5 @@
  * @returns list of values
  */
 export default function values(x: object): any[] {
-    return Object.values(x);
+  return Object.values(x);
 }
