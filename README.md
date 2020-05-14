@@ -26,25 +26,25 @@ Denofun v1.0.0 will NOT be released until Deno v1.0.0 is released. In the meanti
 Thanks to how Deno works, it's easy to start using this library.
 
 ```typescript
-import compose from "https://raw.githubusercontent.com/galkowskit/denofun/master/lib/compose.ts";
+import compose from "https://raw.githubusercontent.com/galkowskit/denofun/master/compose.ts";
 ```
 
 Denofun is also present in [deno.land](https://deno.land/) so you can use it for easier links.
 
 ```typescript
-import compose from "https://deno.land/x/denofun/lib/compose.ts";
+import compose from "https://deno.land/x/denofun/compose.ts";
 ```
 
-You can even target specific versions or branches.
+You can AND SHOULD target specific versions or branches.
 
 ```typescript
-import compose from "https://deno.land/x/denofun@v0.1.0/lib/compose.ts";
+import compose from "https://deno.land/x/denofun@0.3.0/compose.ts";
 ```
 
 Or if you find yourself needing the transpiled JavaScript version:
 
 ```typescript
-import compose from "https://deno.land/x/denofun/lib/compose.ts?js";
+import compose from "https://deno.land/x/denofun/compose.ts?js";
 ```
 
 ### compose
@@ -52,7 +52,7 @@ import compose from "https://deno.land/x/denofun/lib/compose.ts?js";
 **compose** takes a list of functions and does right-to-left function composition.
 
 ```typescript
-import compose from "https://deno.land/x/denofun/lib/compose.ts";
+import compose from "https://deno.land/x/denofun/compose.ts";
 
 function greet(name: string) {
   return `hello, ${name}!`;
@@ -72,7 +72,7 @@ greetLoudly("world"); // => HELLO, WORLD!
 **concat** adds two arrays or strings together.
 
 ```typescript
-import concat from "https://deno.land/x/denofun/lib/concat.ts";
+import concat from "https://deno.land/x/denofun/concat.ts";
 
 concat("hello", "world"); // => "helloworld"
 concat([1, 2, 3], [3, 4, 5]); // => [1, 2, 3, 3, 4, 5]
@@ -83,7 +83,7 @@ concat([1, 2, 3], [3, 4, 5]); // => [1, 2, 3, 3, 4, 5]
 **curry** returns a curried version of the provided n-arity function, it will return new 1-arity functions until all arguments are supplied.
 
 ```typescript
-import curry from "https://deno.land/x/denofun/lib/curry.ts";
+import curry from "https://deno.land/x/denofun/curry.ts";
 
 const greet = (name: string, age: number) =>
   `hello, I'm ${name} and I'm ${age} years old`;
@@ -117,7 +117,7 @@ cars.filter(filterAlfas); // => [ { make: "Alfa Romeo", model: "Giulia" }, { mak
 - provide an alternative to Union types with runtime type safety and no need for typeguards
 
 ```typescript
-import { Either } from "https://deno.land/x/denofun/lib/either.ts";
+import { Either } from "https://deno.land/x/denofun/either.ts";
 
 function handleUnion(stringOrNumber: Either<string, number>): number {
     const value = stringOrNumber
@@ -153,8 +153,8 @@ function handleError(stringOrError: Either<string, Error>): string {
 `JSON.stringify()` will throw the value (ideally an Error)
 
 ```typescript
-import either from "https://deno.land/x/denofun/lib/either.ts";
-// import error from "https://deno.land/x/denofun/lib/either/error.ts"; // is also available
+import either from "https://deno.land/x/denofun/either.ts";
+// import error from "https://deno.land/x/denofun/either/error.ts"; // is also available
 
 const numberOrError = either.error<number, Error>(new Error("message"));
 numberOrError.get(); // returns the error without throwing it
@@ -169,8 +169,8 @@ JSON.stringify(rightString); // throws the Error
 `JSON.stringify()` will serialize it with its name, message, _and stack trace_, if available.
 
 ```typescript
-import either from "https://deno.land/x/denofun/lib/either.ts";
-// import jsonError from "https://deno.land/x/denofun/lib/either/jsonError.ts"; // is also available
+import either from "https://deno.land/x/denofun/either.ts";
+// import jsonError from "https://deno.land/x/denofun/either/jsonError.ts"; // is also available
 
 const numberOrError = either.jsonError<number, Error>(new Error("message"));
 numberOrError.get(); // returns the error without throwing it
@@ -184,8 +184,8 @@ JSON.stringify(rightString); // => {"name": "Error", "message": "message", "stac
 **either.left** wraps a value in the Either interface as a left value;
 
 ```typescript
-import either from "https://deno.land/x/denofun/lib/either.ts";
-// import left from "https://deno.land/x/denofun/lib/either/left.ts"; // is also available
+import either from "https://deno.land/x/denofun/either.ts";
+// import left from "https://deno.land/x/denofun/either/left.ts"; // is also available
 
 const left12 = either.left<number, string>(12);
 left12.get(); // => 12 with string | number union type, but no runtime error
@@ -198,8 +198,8 @@ left12.right.try(); // throws 12
 **either.partition** partitions an array of `Either<Left, Right>` in a tuple or `Left[]` and `Right[]`.
 
 ```typescript
-import { Either } from "https://deno.land/x/denofun/lib/either.ts";
-import partition from "https://deno.land/x/denofun/lib/either/partition.ts";
+import { Either } from "https://deno.land/x/denofun/either.ts";
+import partition from "https://deno.land/x/denofun/either/partition.ts";
 
 const eitherValues: Array<Either<number, string>> = [
   left(1),
@@ -223,8 +223,8 @@ leftValues.length + rightValues.length === 7; // => true
 **either.right** wraps a value in the Either interface as a right value.
 
 ```typescript
-import either from "https://deno.land/x/denofun/lib/either.ts";
-// import right from "https://deno.land/x/denofun/lib/either/right.ts"; // is also available
+import either from "https://deno.land/x/denofun/either.ts";
+// import right from "https://deno.land/x/denofun/either/right.ts"; // is also available
 
 const rightString = either.right<number, string>("hello");
 rightString.get(); // "hello" with string | number union type, but no runtime error
@@ -237,8 +237,8 @@ rightString.right.try(); // returns "hello" with strict static typing
 **either.tryCatch** calls its callback argument immediately and handles any synchronous errors by returning an `Either<Type, Error>`.
 
 ```typescript
-import { Either } from "https://deno.land/x/denofun/lib/either.ts";
-import tryCatch from "https://deno.land/x/denofun/lib/either/tryCatch.ts";
+import { Either } from "https://deno.land/x/denofun/either.ts";
+import tryCatch from "https://deno.land/x/denofun/either/tryCatch.ts";
 
 const numberOrError: Either<number, Error> = tryCatch(() => {
   throw new Error("message");
@@ -255,8 +255,8 @@ numberOrError
 **either.tryCatchAsync** calls its callback argument immediately and handles all synchronous **and** asynchronous errors by returning a `Promise<Either<Type, Error>>`.
 
 ```typescript
-import { Either } from "https://deno.land/x/denofun/lib/either.ts";
-import { tryCatchAsync } from "https://deno.land/x/denofun/lib/either/try_catch.ts";
+import { Either } from "https://deno.land/x/denofun/either.ts";
+import { tryCatchAsync } from "https://deno.land/x/denofun/either/try_catch.ts";
 
 setTimeout(async () => {
   const numberOrError: Either<number, Error> = await tryCatchAsync(() =>
@@ -275,7 +275,7 @@ setTimeout(async () => {
 **equals** checks if two values are equal, **warning:** for non-primitives uses JSON parsing (for now).
 
 ```typescript
-import equals from "https://deno.land/x/denofun/lib/equals.ts";
+import equals from "https://deno.land/x/denofun/equals.ts";
 
 equals(1, 1); // => true
 equals(1, 2); // => false
@@ -292,7 +292,7 @@ equals(
 **filter** runs filter function on every element of array and returns a new array with only those elements for which filter function returned true.
 
 ```typescript
-import filter from "https://deno.land/x/denofun/lib/filter.ts";
+import filter from "https://deno.land/x/denofun/filter.ts";
 
 const cars = [
   { make: "Alfa Romeo", model: "Giulia" },
@@ -312,7 +312,7 @@ filter((car) => car.make === "Ford", cars); // => [ { make: "Ford", model: "Must
 **find** looks up first element of an array that matches the function passed.
 
 ```typescript
-import find from "https://deno.land/x/denofun/lib/find.ts";
+import find from "https://deno.land/x/denofun/find.ts";
 
 const cars = [
   { make: "Alfa Romeo", model: "Giulia" },
@@ -336,7 +336,7 @@ find(findToyota, cars); // => { make: "Toyota", model: "Mirai" }
 **flatten** takes an array of elements and flattens it by one level.
 
 ```typescript
-import flatten from "https://deno.land/x/denofun/lib/find.ts";
+import flatten from "https://deno.land/x/denofun/find.ts";
 
 flatten([
   [1, 2, 3],
@@ -351,7 +351,7 @@ flatten([]); // => []
 **groupBy** accepts a selector function and a list of elements, the elements will be grouped by the return value of the selector function.
 
 ```typescript
-import find from "https://deno.land/x/denofun/lib/group_by.ts";
+import find from "https://deno.land/x/denofun/group_by.ts";
 
 const cars = [
   { make: "Alfa Romeo", model: "Giulia" },
@@ -372,7 +372,7 @@ groupBy((x) => x.length, ["a", "bb", "bb", "ccc"]); // => { 1: ["a"], 2: ["bb", 
 **has** checks if a key exists inside an object (does NOT check the prototype's keys!).
 
 ```typescript
-import has from "https://deno.land/x/denofun/lib/has.ts";
+import has from "https://deno.land/x/denofun/has.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 has("make", car); // => true
@@ -383,7 +383,7 @@ has("make", car); // => true
 **head** returns the first element of an array or a string.
 
 ```typescript
-import head from "https://deno.land/x/denofun/lib/head.ts";
+import head from "https://deno.land/x/denofun/head.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 head(numbers); // => 1
@@ -398,7 +398,7 @@ head("hello world!"); // => "h"
 **identity** returns the provided element, otherwise does nothing.
 
 ```typescript
-import identity from "https://deno.land/x/denofun/lib/identity.ts";
+import identity from "https://deno.land/x/denofun/identity.ts";
 
 const x = 5;
 identity(x); // => 5
@@ -409,7 +409,7 @@ identity(x); // => 5
 **includes** checks if an element exists in a string or array (including objects).
 
 ```typescript
-import includes from "https://deno.land/x/denofun/lib/includes.ts";
+import includes from "https://deno.land/x/denofun/includes.ts";
 
 includes(1, [1, 2, 3]); // => true
 includes("hel", "hello world"); // => true
@@ -424,7 +424,7 @@ includes({ make: "Alfa Romeo", model: "Giulia" }, [
 **keys** returns key names from a provided object.
 
 ```typescript
-import keys from "https://deno.land/x/denofun/lib/keys.ts";
+import keys from "https://deno.land/x/denofun/keys.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 keys(car); // => ["make", "model"]
@@ -435,7 +435,7 @@ keys(car); // => ["make", "model"]
 **last** accepts a list of items (or a string) and returns the last element (or character).
 
 ```typescript
-import last from "https://deno.land/x/denofun/lib/last.ts";
+import last from "https://deno.land/x/denofun/last.ts";
 
 last([1, "test", 3]); // => 3
 last("hello world!"); // => "!"
@@ -446,7 +446,7 @@ last("hello world!"); // => "!"
 **map** applies a function to each element of the array, returns the array of results.
 
 ```typescript
-import map from "https://deno.land/x/denofun/lib/map.ts";
+import map from "https://deno.land/x/denofun/map.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 map((n) => n * 2, numbers); // => [2, 4, 6, 8, 10]
@@ -458,7 +458,7 @@ map((n) => n * 2, numbers); // => [2, 4, 6, 8, 10]
 the map, flatMap, filter, and mapMaybe methods
 
 ```typescript
-import maybe from "https://deno.land/x/denofun/lib/maybe.ts";
+import maybe from "https://deno.land/x/denofun/maybe.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 const maybeNumber = maybe(numbers.find((n) => n > 2));
@@ -484,7 +484,7 @@ memoizedDouble(2); // => 4 (cached)
 **nth** returns element under given index, if negative index is provided element at (length + index) is returned.
 
 ```typescript
-import nth from "https://deno.land/x/denofun/lib/map.ts";
+import nth from "https://deno.land/x/denofun/map.ts";
 
 nth(2, [1, 2, 3, 4, 5]); // => 3
 nth(4, "hello world!"); // => "o"
@@ -495,7 +495,7 @@ nth(4, "hello world!"); // => "o"
 **omit** returns a copy of an object but without specified keys.
 
 ```typescript
-import omit from "https://deno.land/x/denofun/lib/omit.ts";
+import omit from "https://deno.land/x/denofun/omit.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 omit(["make"], car); // => { model: "Giulia" }
@@ -506,7 +506,7 @@ omit(["make"], car); // => { model: "Giulia" }
 **partition** runs predicate on every element of input array and returns a tuple of two arrays: one where predicate returns `true`, one where predicate returns `false`.
 
 ```typescript
-import partition from "https://deno.land/x/partition/lib/partition.ts";
+import partition from "https://deno.land/x/partition/partition.ts";
 partition((x) => x % 3 === 0, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]); // => [[0, 3, 6, 9], [1, 2, 4, 5, 7, 8]]
 ```
 
@@ -515,7 +515,7 @@ partition((x) => x % 3 === 0, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]); // => [[0, 3, 6, 
 **pick** returns a copy of an object with only the keys selected
 
 ```typescript
-import pick from "https://deno.land/x/denofun/lib/pick.ts";
+import pick from "https://deno.land/x/denofun/pick.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia", doors: 5 };
 pick(["make", "model"], car); // => { make: "Alfa Romeo", model: "Giulia" }
@@ -526,7 +526,7 @@ pick(["make", "model"], car); // => { make: "Alfa Romeo", model: "Giulia" }
 **pipe** takes a list of functions and does left-to-right function composition.
 
 ```typescript
-import pipe from "https://deno.land/x/denofun/lib/pipe.ts";
+import pipe from "https://deno.land/x/denofun/pipe.ts";
 
 function greet(name: string) {
   return `hello, ${name}!`;
@@ -546,7 +546,7 @@ greetLoudly("world"); // => "HELLO, WORLD!"
 **pluck** takes an array of objects and a property name and returns an array containing the named property of each object.
 
 ```typescript
-import pluck from "https://deno.land/x/denofun/lib/pluck.ts";
+import pluck from "https://deno.land/x/denofun/pluck.ts";
 
 const cars = [
   { make: "Alfa Romeo", model: "Giulia" },
@@ -566,7 +566,7 @@ pluck("make", cars); // => [ "Alfa Romeo", "Alfa Romeo", "Ford", "Ford", "Toyota
 **prop** returns a value from object under a specific key.
 
 ```typescript
-import prop from "https://deno.land/x/denofun/lib/prop.ts";
+import prop from "https://deno.land/x/denofun/prop.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 prop("make", car); // => "Alfa Romeo"
@@ -578,7 +578,7 @@ prop("make", car); // => "Alfa Romeo"
 keeping the aggragete of previous iterations. Returns a single value.
 
 ```typescript
-import reduce from "https://deno.land/x/denofun/lib/reduce.ts";
+import reduce from "https://deno.land/x/denofun/reduce.ts";
 
 const numbers = [1, 2, 3, 4, 5];
 
@@ -591,7 +591,7 @@ reduce(add, 0, numbers); // => 15
 **reverse** reverses the order of the elements in array or string.
 
 ```typescript
-import reverse from "https://deno.land/x/denofun/lib/reverse.ts";
+import reverse from "https://deno.land/x/denofun/reverse.ts";
 
 reverse([1, 2, 3, 4, 5]); // => [5, 4, 3, 2, 1]
 
@@ -603,7 +603,7 @@ reverse("hello world!"); // => ["!dlrow olleh"]
 **slice** return a given slice of an array or string (wrapper over Array.prototype.slice)
 
 ```typescript
-import slice from "https://deno.land/x/denofun/lib/slice.ts";
+import slice from "https://deno.land/x/denofun/slice.ts";
 
 slice(1, 3, ["a", "b", "c", "d", "e"]); // => ['b', 'c']
 slice(1, Infinity, ["b", "c", "d", "e"]); // => ['b', 'c', 'd', 'e']
@@ -617,7 +617,7 @@ Sorting function has to accept two arguments and retrun positive number if first
 is bigger than second, 0 if equal and negative if lesser.
 
 ```typescript
-import sort from "https://deno.land/x/denofun/lib/sort.ts";
+import sort from "https://deno.land/x/denofun/sort.ts";
 
 function sortNumbers(a, b) {
   if (a > b) {
@@ -644,7 +644,7 @@ sort((a, b) => a - b, [5, 4, 2, 3, 1]); // => [1, 2, 3, 4, 5];
 **split** splits a string by a given deliminator/separator.
 
 ```typescript
-import split from "https://deno.land/x/denofun/lib/split.ts";
+import split from "https://deno.land/x/denofun/split.ts";
 
 split("/", "/usr/local/bin/deno"); // => ["", "usr", "local", "bin", "deno"]
 ```
@@ -654,7 +654,7 @@ split("/", "/usr/local/bin/deno"); // => ["", "usr", "local", "bin", "deno"]
 **tail** returns all elements of the given array or string except the first.
 
 ```typescript
-import tail from "https://deno.land/x/denofun/lib/tail.ts";
+import tail from "https://deno.land/x/denofun/tail.ts";
 
 tail([1, 2, 3, 4, 5]); // => [2, 3, 4, 5]
 
@@ -668,7 +668,7 @@ tail("hello world!"); // => "ello world!"
 **values** returns values from a provided object
 
 ```typescript
-import values from "https://deno.land/x/denofun/lib/values.ts";
+import values from "https://deno.land/x/denofun/values.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 values(car); // => ["make", "model"]

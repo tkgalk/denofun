@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        deno: [0.42.0]
+        deno: [1.0.0]
     name: deno ${{ matrix.deno }} sample
     steps:
       - uses: actions/checkout@master
