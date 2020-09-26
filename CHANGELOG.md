@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- adds lens function
+
 ## [0.3.0] - 2020-05-14
 
 ### Added
@@ -90,7 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - reverse function
 - tail function
 
-[unreleased]: https://github.com/galkowskit/denofun/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/galkowskit/denofun/compare/0.3.0...HEAD
 [0.3.0]: https://github.com/galkowskit/denofun/compare/v0.2.0...0.3.0
 [v0.2.0]: https://github.com/galkowskit/denofun/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/galkowskit/denofun/releases/tag/v0.1.0
