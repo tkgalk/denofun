@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.71.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@v0.42.0/testing/asserts.ts";
 
 import lens from "../lib/lens.ts";
 import set from "../lib/set.ts";
