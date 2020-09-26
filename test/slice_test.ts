@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@v0.42.0/testing/asserts.ts";
+import { assertEquals } from "../deps.ts";
 
 import slice from "../lib/slice.ts";
 
