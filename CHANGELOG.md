@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - adds lens function
 
+### Changed
+- moved dependencies to a single file
+
 ## [0.3.0] - 2020-05-14
 
 ### Added
