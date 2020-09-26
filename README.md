@@ -441,6 +441,24 @@ last([1, "test", 3]); // => 3
 last("hello world!"); // => "!"
 ```
 
+### lens
+
+**lens** lens returns a special lens object that can be used as a function setter/getter.
+
+```typescript
+import lens from "https://deno.land/x/denofun/lens.ts";
+
+const car = Object.freeze({
+  make: "Toyota",
+  model: "GT86",
+});
+
+const getCarModel = (data: { make: string, model: string }) => data.model;
+const setCarModel = (data: { make: string, model: string }, value: string) => ({ ...data, model: value });
+
+const carModelLens = lens(getCarModel, setCarModel); // => Lens<Car, string>
+```
+
 ### map
 
 **map** applies a function to each element of the array, returns the array of results.
@@ -602,7 +620,29 @@ reverse([1, 2, 3, 4, 5]); // => [5, 4, 3, 2, 1]
 reverse("hello world!"); // => ["!dlrow olleh"]
 ```
 
-**slice** return a given slice of an array or string (wrapper over Array.prototype.slice)
+### set
+
+**set** uses a provided lens, copies the provided object with a changed value.
+
+```typescript
+import lens from "https://deno.land/x/denofun/lens.ts";
+import set from "https://deno.land/x/denofun/set.ts";
+
+const car = Object.freeze({
+  make: "Toyota",
+  model: "GT86",
+});
+
+const getCarModel = (data: { make: string, model: string }) => data.model;
+const setCarModel = (data: { make: string, model: string }, value: string) => ({ ...data, model: value });
+
+const carModelLens = lens(getCarModel, setCarModel);
+set(carModelLens, car, "Mirai"); // => { make: "Toyota", model: "Mirai" }
+```
+
+### slice
+
+**slice** return a given slice of an array or string (wrapper over Array.prototype.slice).
 
 ```typescript
 import slice from "https://deno.land/x/denofun/slice.ts";
@@ -674,6 +714,26 @@ import values from "https://deno.land/x/denofun/values.ts";
 
 const car = { make: "Alfa Romeo", model: "Giulia" };
 values(car); // => ["make", "model"]
+```
+
+### view
+
+**view** uses a lens to get value from an object.
+
+```typescript
+import lens from "https://deno.land/x/denofun/lens.ts";
+import view from "https://deno.land/x/denofun/view.ts";
+
+const car = Object.freeze({
+  make: "Toyota",
+  model: "GT86",
+});
+
+const getCarModel = (data: { make: string, model: string }) => data.model;
+const setCarModel = (data: { make: string, model: string }, value: string) => ({ ...data, model: value });
+
+const carModelLens = lens(getCarModel, setCarModel);
+view(carModelLens, car); // => "GT86"
 ```
 
 ## For Developers
