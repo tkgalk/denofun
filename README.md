@@ -351,7 +351,7 @@ flatten([]); // => []
 **groupBy** accepts a selector function and a list of elements, the elements will be grouped by the return value of the selector function.
 
 ```typescript
-import find from "https://deno.land/x/denofun/group_by.ts";
+import groupBy from "https://deno.land/x/denofun/group_by.ts";
 
 const cars = [
   { make: "Alfa Romeo", model: "Giulia" },
@@ -472,6 +472,8 @@ maybeNumber.flatMap((n) => (n !== 3 ? maybe(1 / (n - 3)) : maybe())).get(); // =
 **memoize** returns a function that remembers the result of a function with a given parameters so it can cache the previous results.
 
 ```typescript
+import memoize from "https://deno.land/x/denofun/memoize.ts";
+
 const double = (n) => n * 2;
 const memoizedDouble = memoize(double);
 
@@ -484,7 +486,7 @@ memoizedDouble(2); // => 4 (cached)
 **nth** returns element under given index, if negative index is provided element at (length + index) is returned.
 
 ```typescript
-import nth from "https://deno.land/x/denofun/map.ts";
+import nth from "https://deno.land/x/denofun/nth.ts";
 
 nth(2, [1, 2, 3, 4, 5]); // => 3
 nth(4, "hello world!"); // => "o"
